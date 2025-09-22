@@ -1,11 +1,12 @@
 import "../../css/buttons.css";
 
-const ButtonOption = () => {
+const ButtonOption = ({titulo, onClick}) => {
     return (
         
-        <button className="btn">
+        <div className="btn" onClick={onClick}>
             <img src="casita.png"/>
-            Botón de opción</button>
+            {titulo}
+            </div>
         
     )
 }
