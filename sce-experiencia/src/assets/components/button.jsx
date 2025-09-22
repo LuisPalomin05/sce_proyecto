@@ -4,8 +4,8 @@ const ButtonOption = ({titulo, onClick}) => {
     return (
         
         <div className="btn" onClick={onClick}>
-            <img src="casita.png"/>
-            {titulo}
+            <ion-icon name="home-outline"></ion-icon>
+            {titulo}           
             </div>
         
     )

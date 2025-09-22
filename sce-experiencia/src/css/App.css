@@ -10,9 +10,17 @@
 
 .sidebar {
   grid-area: sidebar;
-  background: orange;
+  background: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .body {
   grid-area: body;
   background: lightblue;
 }
+
+ion-icon {
+  font-size: 32px;
+  color: black;
+
+}
+
