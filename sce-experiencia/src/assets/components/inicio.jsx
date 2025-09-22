@@ -1,11 +1,21 @@
-import "../../css/Inicio.css"
+import "../../css/Inicio.css";
+
 const Inicio= ()=>{
 
     return (
-        <article className="Inicio">
-            <h2>Inicio</h2>
-            <p>Bienvenido a la página de inicio</p>
-        </article>
+      <div className="body">
+        <nav className="Nav">
+            <p className="TituloNavegacion">Inicio</p>
+            <img src="" alt="" />
+            <section className="divBuscar">
+                <div className="divInput">
+                    <img src="../img/lupa.jpg" alt="" />
+                    <input type="text" />
+                </div>
+            </section>
+        </nav>
+        <h2>pantalla de inicio</h2>
+      </div>
     )
 
 }

@@ -9,9 +9,8 @@ function App() {
 
       <Sidebar />
 
-      <div className="body">
-        <h2>pantalla de inicio</h2>
-      </div>
+      <Inicio />
+
     </section>
   );
 }

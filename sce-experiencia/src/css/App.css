@@ -5,7 +5,7 @@
   grid:
     "sidebar body" 1fr
     / auto 1fr;
-  gap: 8px;
+
 }
 
 .sidebar {
