@@ -3,15 +3,27 @@
     color: rgb(17, 17, 17);
     text-align: left;
     padding: 10px;
-      text-indent: 2em hanging;
-
+    text-indent: 2em hanging;
+    margin: 10px;  
+    border-radius: 5px; 
+    display: flex;
+    flex-direction: row;
     
 }
 
 img {
   height: 100px;
-  width: 100px;  
-  
-  
+  width: 100px;   
+}
+
+.icono{
+  margin: 5px;
+  height: 30px;
+  width: 30px;
+}
+
+ion-icon {
+  height: 15px;
+  width: 15px;
 }
 
