@@ -6,10 +6,8 @@ const Inicio= ()=>{
       <div className="body">
         <nav className="Nav">
             <p className="TituloNavegacion">Inicio</p>
-            <img src="" alt="" />
             <section className="divBuscar">
                 <div className="divInput">
-                    <img src="../img/lupa.jpg" alt="" />
                     <input type="text" />
                 </div>
             </section>
