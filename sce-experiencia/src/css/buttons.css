@@ -1,10 +1,17 @@
 .btn{
-    background: #5826b6;
-    color: white;
+    background: #dbd9de;
+    color: rgb(17, 17, 17);
+    text-align: left;
+    padding: 10px;
+      text-indent: 2em hanging;
+
+    
 }
 
 img {
   height: 100px;
   width: 100px;  
+  
+  
 }
 

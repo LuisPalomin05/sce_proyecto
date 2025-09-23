@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ionic/core": "^8.7.4",
+    "@ionic/react": "^8.7.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
