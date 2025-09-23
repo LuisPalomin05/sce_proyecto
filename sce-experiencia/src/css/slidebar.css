@@ -1,11 +1,1 @@
-.sidebar{
-display: flex;
-flex-direction: column;
-gap: 10px;
-margin: 10px;
-}
 
-ion-icon {
-
-  margin-right: 10px;
-}

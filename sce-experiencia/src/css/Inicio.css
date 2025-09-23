@@ -1,0 +1,91 @@
+.Navegacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.Navegacion .Titulo {
+  font-size: 15px;
+  font-weight: bold;
+}
+.Controles {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.Controles .iconoNotificacion {
+  font-size: 20px;
+  color: #7e7e7e;
+}
+
+.iconoNotificacion:hover {
+  cursor: pointer;
+  color: #575757;
+}
+
+.InputBuscador {
+  background: #d9d9d9ab;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  height: 80%;
+  border-radius: 8px;
+  width: 280px;
+  cursor: pointer;
+}
+
+.InputBuscador input {
+  border: none;
+  background: transparent;
+  color: #464545;
+  outline: none;
+}
+
+.icono-buscador {
+  font-size: 18px;
+  color: #7e7e7e;
+}
+
+
+
+.NotificacionWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.Notificacion {
+  position: absolute;
+  top: 35px;   
+  right: -250px;    
+  width: 280px;
+  z-index: 30;
+  background: #151414;
+  padding: 10px;
+  border-radius: 10px;
+  display: none; 
+}
+
+
+
+.NotificacionWrapper:hover .Notificacion {
+  display: block;
+}
+
+/* Mostrar fijo si está activo (click) */
+.NotificacionWrapper.activo .Notificacion {
+  display: block;
+}
+
+
+/* contenido dentro de la pagina principal */
+.Contentido {
+  padding: 15px;
+  min-height: calc(100vh - 40px);
+}
+
+

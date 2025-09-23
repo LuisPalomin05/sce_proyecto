@@ -3,8 +3,8 @@ import "../../css/slidebar.css";
 
 const Sidebar = () => {
     return (
-        <div className="sidebar" >
-            <h2>pestaña lateral actualizada</h2>
+        <div className="slidebar" >
+            <nav >pestaña lateral actualizada</nav>
             <ButtonOption titulo={"Inicio"} onClick={()=>alert("Hola")}></ButtonOption>
             <ButtonOption titulo={"Cotizar"}></ButtonOption>
             <ButtonOption titulo={"Compras"}></ButtonOption>
