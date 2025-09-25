@@ -6,7 +6,7 @@ const Sidebar = () => {
 
   return (
     <div className="slidebar">
-      <nav>
+      <nav className="nav-user">
         <CardUsuario
           urlImagen={""}
           nombre={"JohnDoe"}
