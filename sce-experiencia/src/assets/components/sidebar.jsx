@@ -1,7 +1,8 @@
-import ButtonOption from "./button";
+import ButtonOption from "./utils/button";
 import CardUsuario from "./utils/cardUsuario";
 import "../../css/slidebar.css";
-
+import { IonIcon } from "@ionic/react";
+import { homeOutline, cartOutline, cashOutline, cubeOutline, peopleCircleOutline, bagCheckOutline } from "ionicons/icons";
 const Sidebar = () => {
 
   return (
@@ -17,13 +18,14 @@ const Sidebar = () => {
       <div>
         <ButtonOption
           titulo={"Inicio"}
-          onClick={() => alert("Hola")}
-        ></ButtonOption>
-        <ButtonOption titulo={"Cotizar"}></ButtonOption>
-        <ButtonOption titulo={"Compras"}></ButtonOption>
-        <ButtonOption titulo={"Ventas"}></ButtonOption>
-        <ButtonOption titulo={"Pedidos"}></ButtonOption>
-        <ButtonOption titulo={"Gestión Cliente/Proveedor"}></ButtonOption>
+          icono={homeOutline}
+          ruta={"/"}
+        />
+        <ButtonOption titulo={"Cotizar"} icono={cashOutline} ruta={"/cotizar"}></ButtonOption>
+        <ButtonOption titulo={"Compras"} icono={cartOutline} ruta={"/compras"}></ButtonOption>
+        <ButtonOption titulo={"Ventas"} icono={bagCheckOutline} ruta={"/ventas"}></ButtonOption>
+        <ButtonOption titulo={"Pedidos"} icono={cubeOutline} ruta={"/pedidos"}></ButtonOption>
+        <ButtonOption titulo={"Gestión Cliente/Proveedor"} icono={peopleCircleOutline} ruta={"/administracion"}></ButtonOption>
       </div>
     </div>
   );

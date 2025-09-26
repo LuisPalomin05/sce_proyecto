@@ -1,7 +1,13 @@
 import "../../css/Inicio.css";
 import { useState } from "react";
 import { IonIcon } from "@ionic/react";
-import { notifications,notificationsOutline } from "ionicons/icons";
+import { notifications, notificationsOutline } from "ionicons/icons";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 // Componentes
 import InputBuscador from "./utils/InputBuscador";
@@ -42,7 +48,18 @@ const Inicio = () => {
         </div>
       </nav>
 
-      <section className="Contentido">pagina de inicio</section>
+      <section className="Contentido">
+        <Routes>
+          <Route path="/" element={<div>Bienvenido al inicio</div>} />
+          <Route path="/cotizar" element={<div>Página de Cotizar</div>} />
+          <Route path="/compras" element={<div>Página de Compras</div>} />
+          <Route path="/ventas" element={<div>Página de Ventas</div>} />
+          <Route path="/pedidos" element={<div>Página de Pedidos</div>} />
+          <Route path="/administracion"element={<div>Página de Gestión Cliente/Proveedor</div>}/>
+          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+        
+        </Routes>
+      </section>
     </div>
   );
 };

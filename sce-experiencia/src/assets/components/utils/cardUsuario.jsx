@@ -15,11 +15,11 @@ const CardUsuario = ({ urlImagen, nombre, nombreUsuario }) => {
   };
  
   function ramdomColor() {
-  // const colors = ['#dd401dff', '#44c75cff', '#3854ceff', '#be53c5ff', '#2ecac2ff',
-  //   '#dd1d37ff', '#8b33ffff', '#339cffff', '#ffbe33ff', '#ff8f33ff'
-  // ];
-  // return colors[Math.floor(Math.random() * colors.length)];
-console.log("ramdomColor");
+  const colors = ['#dd401dff', '#44c75cff', '#3854ceff', '#be53c5ff', '#2ecac2ff',
+    '#dd1d37ff', '#8b33ffff', '#339cffff', '#ffbe33ff', '#ff8f33ff'
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+
 }
 
   return (

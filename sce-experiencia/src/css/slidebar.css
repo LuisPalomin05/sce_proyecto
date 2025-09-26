@@ -23,7 +23,6 @@ padding: 0;
 .card-usuario {
   display: flex;
   align-items: center;
-background: red;
   height: 100%;
   width: 100%;
   gap: 5px;

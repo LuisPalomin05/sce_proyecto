@@ -4,7 +4,17 @@
   display: grid;
   grid:
     "sidebar body" 1fr
-    / 250px 1fr;
+    / 240px 1fr;
+}
+
+@media (max-width: 768px) {
+  .layout {
+      display: grid;
+
+    grid:
+      "sidebar body" 1fr
+      / 210px 1fr;
+  }
 }
 
 .slidebar {
@@ -16,9 +26,8 @@
   background: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-
-
 }
+
 .body {
   grid-area: body;
 }
