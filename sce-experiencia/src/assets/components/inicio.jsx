@@ -12,6 +12,7 @@ import {
 // Componentes
 import InputBuscador from "./utils/InputBuscador";
 import Notificaciones from "./utils/bxNotificaciones";
+import Cotizador from "./pages/Cotizar";
 
 const Inicio = () => {
   const [searchValue, setSearchValue] = useState("");
