@@ -1,29 +1,27 @@
 .btn{
     background: #dbd9de;
-    color: rgb(17, 17, 17);
+    color: #403A3A;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
     text-align: left;
-    padding: 10px;
-    text-indent: 2em hanging;
+    padding: 5px;
     margin: 10px;  
     border-radius: 5px; 
     display: flex;
     flex-direction: row;
-    
+    align-items: center;
+    text-decoration: none;
+    font-optical-sizing:auto;
 }
 
-img {
-  height: 100px;
-  width: 100px;   
-}
 
-.icono{
-  margin: 5px;
+ .icono{
   height: 30px;
   width: 30px;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
 
-ion-icon {
-  height: 15px;
-  width: 15px;
-}
 
