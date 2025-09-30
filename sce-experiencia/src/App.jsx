@@ -1,32 +1,37 @@
-import "./css/App.css";
+import "./css/App.css"; 
 import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  Navigate
 } from "react-router-dom";
-
 
 import "./css/login.css";
 import Login from "./assets/components/Login";
-import Inicio from "./assets/components/Inicio";
-import ButtonOption from "./assets/components/utils/button";
-import Sidebar from "./assets/components/Sidebar";
+import Dashboard from "./assets/components/pages/DashboardInicio";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const callAuth = (info) => {
+    setIsAuthenticated(info);
+  };
+
   return (
-    <section className="layout">
+    <Router>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<Login validacion={callAuth} />} 
+        />
 
-      <Login/>
-
-       <Login nombre="Invitado" />
-
-       <Sidebar />
-
-      <Inicio />
-
-    </section>
+        <Route
+          path="/dashboard/*"
+          element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}
+        />
+      </Routes>
+    </Router>
   );
 }
 

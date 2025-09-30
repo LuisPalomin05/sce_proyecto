@@ -1,0 +1,7 @@
+
+.Cotizador{
+    display: grid;
+      grid:
+    "form panel" 1fr
+    / 1fr 200px;
+}

@@ -19,13 +19,13 @@ const Sidebar = () => {
         <ButtonOption
           titulo={"Inicio"}
           icono={homeOutline}
-          ruta={"/"}
+          ruta={"/dashboard"}
         />
-        <ButtonOption titulo={"Cotizar"} icono={cashOutline} ruta={"/cotizar"}></ButtonOption>
-        <ButtonOption titulo={"Compras"} icono={cartOutline} ruta={"/compras"}></ButtonOption>
-        <ButtonOption titulo={"Ventas"} icono={bagCheckOutline} ruta={"/ventas"}></ButtonOption>
-        <ButtonOption titulo={"Pedidos"} icono={cubeOutline} ruta={"/pedidos"}></ButtonOption>
-        <ButtonOption titulo={"Gestión Cliente/Proveedor"} icono={peopleCircleOutline} ruta={"/administracion"}></ButtonOption>
+        <ButtonOption titulo={"Cotizar"} icono={cashOutline} ruta={"/dashboard/cotizar"}></ButtonOption>
+        <ButtonOption titulo={"Compras"} icono={cartOutline} ruta={"/dashboard/compras"}></ButtonOption>
+        <ButtonOption titulo={"Ventas"} icono={bagCheckOutline} ruta={"/dashboard/ventas"}></ButtonOption>
+        <ButtonOption titulo={"Pedidos"} icono={cubeOutline} ruta={"/dashboard/pedidos"}></ButtonOption>
+        <ButtonOption titulo={"Gestión Cliente/Proveedor"} icono={peopleCircleOutline} ruta={"/dashboard/administracion"}></ButtonOption>
       </div>
     </div>
   );

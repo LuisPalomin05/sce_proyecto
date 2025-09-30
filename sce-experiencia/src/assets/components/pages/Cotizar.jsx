@@ -5,9 +5,11 @@ const Cotizador = () => {
 
 return (
 
-<div>
-    <div></div>
-    <div></div>
+<div className="Cotizador">
+    <div>
+        1
+    </div>
+    <div>2</div>
 </div>
 )
 
