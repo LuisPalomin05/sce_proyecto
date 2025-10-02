@@ -55,8 +55,7 @@ const Inicio = () => {
           <Route path="compras" element={<div>Página de Compras</div>} />
           <Route path="ventas" element={<div>Página de Ventas</div>} />
           <Route path="pedidos" element={<div>Página de Pedidos</div>} />
-          <Route
-            path="administracion"
+          <Route path="administracion"
             element={<div>Página de Gestión Cliente/Proveedor</div>}
           />
         </Routes>
@@ -66,3 +65,9 @@ const Inicio = () => {
 };
 
 export default Inicio;
+
+
+
+
+
+

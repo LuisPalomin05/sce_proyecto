@@ -1,11 +1,6 @@
 import "./css/App.css"; 
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate
-} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Route,Navigate} from "react-router-dom";
 
 import "./css/login.css";
 import Login from "./assets/components/Login";
