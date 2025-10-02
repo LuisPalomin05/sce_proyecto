@@ -51,7 +51,7 @@ const Inicio = () => {
 
       <section className="Contentido">
         <Routes>
-          <Route path="cotizar" element={<div>Página de Cotizar</div>} />
+          <Route path="cotizar" element={<Cotizador/>} />
           <Route path="compras" element={<div>Página de Compras</div>} />
           <Route path="ventas" element={<div>Página de Ventas</div>} />
           <Route path="pedidos" element={<div>Página de Pedidos</div>} />

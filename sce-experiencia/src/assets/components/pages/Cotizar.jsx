@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../../css/inicio_cotizador.css";
 
 const Cotizador = () => {
 
@@ -6,10 +7,10 @@ const Cotizador = () => {
 return (
 
 <div className="Cotizador">
-    <div>
+    <div className="formulario">
         1
     </div>
-    <div>2</div>
+    <div className="panel">2</div>
 </div>
 )
 

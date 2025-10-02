@@ -2,6 +2,20 @@
 .Cotizador{
     display: grid;
       grid:
-    "form panel" 1fr
-    / 1fr 200px;
+    "formulario panel" 1fr
+    / 4fr 1.5fr;
+    height: 100%;
+    background: red;
+}
+
+.formulario{
+    grid-area: formulario;
+    border: 1px solid black;
+    height: 100%;
+}
+
+.panel{
+    grid-area: panel;
+    border: 1px solid red;
+    height: 100%;
 }
