@@ -1,20 +1,68 @@
-
-.Cotizador{
-    display: grid;
-      grid:
+.Cotizador {
+  display: grid;
+  grid:
     "formulario panel" 1fr
     / 4fr 1.5fr;
-    height: 100%;
+  height: 100%;
 }
 
-.formulario{
-    grid-area: formulario;
-    /* border: 1px solid black; */
-    height: 100%;
+.formulario {
+  grid-area: formulario;
+  /* border: 1px solid black; */
+  height: 100%;
 }
 
-.panel{
-    grid-area: panel;
-    /* border: 1px solid red; */
-    height: 100%;
+.panel {
+  grid-area: panel;
+  /* border: 1px solid red; */
+  height: 100%;
+}
+
+.labelInput {
+  color: #1e1e1e;
+}
+
+.labelItem {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.inputDatos {
+  /* border: 1px solid #C4C4C4; */
+  border: none;
+  background: #ebebeb;
+  height: 20px;
+  padding: 0 2px;
+    outline: 0.5px solid transparent;
+  box-sizing: border-box;
+}
+
+.inputDatos:focus,.inputDatos:active {
+  outline: 0.5px solid #257ef2;
+  border-radius: 3px;
+  background: white;
+}
+
+.inputChildren {
+  display: flex;
+  align-items: center;
+}
+
+.labelIcon {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #787474;
+  width: 20px;
+  height: 20px;
+  background: #ebebeb;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.labelIcon:hover {
+  background: #d4d4d4;
+  color: black;
 }

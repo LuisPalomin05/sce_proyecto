@@ -4,46 +4,31 @@ import { searchOutline } from "ionicons/icons";
 
 import "../../../css/inicio_cotizador.css";
 
-import LabelInput from './';
+import LabelInputs from "../utils/LabelInputs";
+import { d } from "../../../../dist/assets/index-DecGNGCe";
 
 const Cotizador = () => {
   return (
     <div className="Cotizador">
       <div className="formulario">
         <div>
-          <section>
-            <LabelInputs label="Nombre:" name="nombreCliente"/>
-            <div>
-              <label htmlFor="nombreCliente">Nombre:</label>
-              <input type="text" name="nombreCliente" />
-            </div>
-            <div>
-              <label htmlFor="rucCliente">R.u.c:</label>
-              <input type="text" name="rucCliente" />
-              <IonIcon className="iconoBuscar" icon={searchOutline} />
-            </div>
+          <section style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <LabelInputs nombre="Nombre" s/>
+            <LabelInputs nombre="RUC">
+              <IonIcon className="Buscar" icon={searchOutline} />
+            </LabelInputs>
           </section>
-          <section>
-            <div>
-              <label htmlFor="producto">Producto:</label>
-              <input type="text" name="producto" />
-            </div>
-            <div>
-              <label htmlFor="codigoProducto">Codigo:</label>
-              <input type="text" name="codigoProducto" />
-              <IonIcon className="iconoBuscar" icon={searchOutline} />
-            </div>
+          <section style={{ display: "flex", gap: "10px" , alignItems: "center"}}>
+            <LabelInputs nombre="Producto" />
+            <LabelInputs nombre="Codigo">
+              <IonIcon className="Buscar" icon={searchOutline} />
+            </LabelInputs>
           </section>
-          <section>
-            <div>
-              <label htmlFor="cantidad">Cantidad:</label>
-              <input type="text" name="cantidad" />
-            </div>
-            <div>
-              <label htmlFor="precio">Precio Unitario:</label>
-              <input type="text" name="precio" />
+          <section style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <LabelInputs nombre="Cantidad" />
+            <LabelInputs nombre="Codigo">
               <p>$.</p>
-            </div>
+            </LabelInputs>
             <div>
               <button>Agregar</button>
             </div>
@@ -81,13 +66,11 @@ const Cotizador = () => {
       <div className="panel">
         <div></div>
         <div>
-          <section>
-            <label htmlFor="moneda">Moneda:</label>
-            <input type="text" name="moneda"/>
-          </section>
+          <LabelInputs nombre="Moneda" />
+
           <section>
             <label htmlFor="metodoPago">Metodo de Pago:</label>
-            <input type="text" name="metodoPago"/>
+            <input type="text" name="metodoPago" />
           </section>
         </div>
         <div>
@@ -97,10 +80,7 @@ const Cotizador = () => {
           </section>
         </div>
         <div>
-          <section>
-            <label htmlFor=""></label>
-            <input type="text" />
-          </section>
+          <LabelInputs nombre="Numero Cotizacion" />
         </div>
         <div>
           <section>Resumen de Cotizacion</section>
@@ -129,13 +109,13 @@ const Cotizador = () => {
           </section>
         </div>
         <div>
-            <label htmlFor="observaciones">Observaciones:</label>
-            <textarea name="observaciones" rows="4"></textarea>
+          <label htmlFor="observaciones">Observaciones:</label>
+          <textarea name="observaciones" rows="4"></textarea>
         </div>
         <div>
-            <button>Guardar Cotización</button>
-            <button>Generar Factura</button>
-            <button>Cancelar</button>
+          <button>Guardar Cotización</button>
+          <button>Generar Factura</button>
+          <button>Cancelar</button>
         </div>
       </div>
     </div>
