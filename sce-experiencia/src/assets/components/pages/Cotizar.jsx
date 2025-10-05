@@ -5,7 +5,6 @@ import { searchOutline } from "ionicons/icons";
 import "../../../css/inicio_cotizador.css";
 
 import LabelInputs from "../utils/LabelInputs";
-import { d } from "../../../../dist/assets/index-DecGNGCe";
 
 const Cotizador = () => {
   return (
