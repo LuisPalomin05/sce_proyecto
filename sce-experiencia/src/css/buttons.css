@@ -1,4 +1,4 @@
-.btn{
+.btnsidebar{
     background: #dbd9de;
     color: #403A3A;
     font-family: "Inter", sans-serif;
@@ -15,6 +15,9 @@
     font-optical-sizing:auto;
 }
 
+.btnsidebar:hover{
+  background: #bab8bc;
+}
 
  .icono{
   height: 30px;

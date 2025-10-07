@@ -16,6 +16,7 @@
   grid-area: panel;
   /* border: 1px solid red; */
   height: 100%;
+  display: flex;
 }
 
 .labelInput {
@@ -45,7 +46,7 @@
 
 .inputDatos[type="date"] {
   padding: 2px 0 2px 2px;
-  border: 1px solid #828181;
+  /* border: 1px solid #828181; */
   height: 24px;
 }
 
@@ -71,4 +72,41 @@
 .labelIcon:hover {
   background: #d4d4d4;
   color: black;
+}
+
+
+.desplegarPanel{
+  cursor: pointer;
+  border: 1px solid #787474;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.contenidoPanel{
+  display: flex;
+  flex-direction: column;
+}
+
+.btnPanel{
+  background: #257ef2;
+  color: white;
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnPanel:nth-child(3){
+  background: #D9D9D9;
+  color: #403A3A;
+}
+
+.observaciones{
+  border-radius: 10px;
+  margin: 5px 0;
 }

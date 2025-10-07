@@ -4,7 +4,7 @@ import { IonIcon } from "@ionic/react";
 
 const ButtonOption = ({ titulo, icono, ruta }) => {
   return (
-    <Link to={ruta} className="btn">
+    <Link to={ruta} className="btnsidebar">
       <div className="icono">
         <IonIcon icon={icono}></IonIcon>
       </div>

@@ -1,31 +1,57 @@
 import { useState } from "react";
 import { IonIcon } from "@ionic/react";
-import { searchOutline } from "ionicons/icons";
+import { searchOutline, caretForwardOutline } from "ionicons/icons";
 
 import "../../../css/inicio_cotizador.css";
 
 import LabelInputs from "../utils/LabelInputs";
+import Importes from "../utils/casillaImportes";
+
+import { crearPdf } from "../utils/crearPdf";
 
 const Cotizador = () => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    ruc: "",
+    producto: "",
+    codigo: "",
+    cantidad: "",
+    precioUnitario: "",
+    fechaEmision: "",
+    numeroCotizacion: "",
+    observaciones: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <div className="Cotizador">
       <div className="formulario">
         <div>
-          <section style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-            <LabelInputs nombre="Nombre" s/>
-            <LabelInputs nombre="RUC">
+          <section
+            style={{ display: "flex", gap: "10px", alignItems: "center" }}
+          >
+            <LabelInputs nombre="Nombre" value={formData.nombre} onChange={handleChange}/>
+            <LabelInputs nombre="RUC" value={formData.ruc} onChange={handleChange}>
               <IonIcon className="Buscar" icon={searchOutline} />
             </LabelInputs>
           </section>
-          <section style={{ display: "flex", gap: "10px" , alignItems: "center"}}>
-            <LabelInputs nombre="Producto" />
-            <LabelInputs nombre="Codigo">
+          <section
+            style={{ display: "flex", gap: "10px", alignItems: "center" }}
+          >
+            <LabelInputs nombre="Producto" value={formData.producto} onChange={handleChange} />
+            <LabelInputs nombre="Codigo" value={formData.codigo} onChange={handleChange}>
               <IonIcon className="Buscar" icon={searchOutline} />
             </LabelInputs>
           </section>
-          <section style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-            <LabelInputs nombre="Cantidad" />
-            <LabelInputs nombre="Codigo">
+          <section
+            style={{ display: "flex", gap: "10px", alignItems: "center" }}
+          >
+            <LabelInputs nombre="Cantidad" value={formData.cantidad} onChange={handleChange} />
+            <LabelInputs nombre="Precio Unitario" value={formData.precioUnitario} onChange={handleChange}>
               <p>$.</p>
             </LabelInputs>
             <div>
@@ -63,53 +89,53 @@ const Cotizador = () => {
         </div>
       </div>
       <div className="panel">
-        <div></div>
         <div>
-          <LabelInputs nombre="Moneda" />
-          <LabelInputs nombre="Metodo de Pago" />
+          <div className="desplegarPanel">
+            <IonIcon icon={caretForwardOutline} />
+          </div>
         </div>
-        <div>
-          <LabelInputs nombre="Fecha de Emision" types="date" />
-
-
-        </div>
-        <div>
-          <LabelInputs nombre="Numero Cotizacion" />
-        </div>
-        <div>
-          <section>Resumen de Cotizacion</section>
-          <section>
-            <div style={{ display: "flex" }}>
-              <p>SUBTOTAL:</p>
-              <div style={{ display: "flex"}}>
-                <p>$</p>
-                <p>20.00</p>
-              </div>
-            </div>
-            <div style={{ display: "flex"}}>
-              <p>IGV 18% :</p>
-              <div style={{ display: "flex"}}>
-                <p>$</p>
-                <p>3.60</p>
-              </div>
-            </div>
-            <div style={{ display: "flex", fontWeight: "bold" }}>
-              <p>IMPORTE TOTAL:</p>
-              <div style={{ display: "flex"}}>
-                <p>$</p>
-                <p>23.60</p>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div>
-          <label htmlFor="observaciones">Observaciones:</label>
-          <textarea name="observaciones" rows="4"></textarea>
-        </div>
-        <div>
-          <button>Guardar Cotización</button>
-          <button>Generar Factura</button>
-          <button>Cancelar</button>
+        <div className="contenidoPanel">
+          <div>
+            <LabelInputs nombre="Moneda" value={formData.moneda} onChange={handleChange} />
+            <LabelInputs nombre="Metodo de Pago" value={formData.metodoPago} onChange={handleChange} />
+          </div>
+          <div>
+            <LabelInputs nombre="Fecha de Emision" types="date" value={formData.fechaEmision} onChange={handleChange} />
+          </div>
+          <div>
+            <LabelInputs nombre="Numero Cotizacion" value={formData.numeroCotizacion} onChange={handleChange} />
+          </div>
+          <div>
+            <section>Resumen de Cotizacion</section>
+            <section>
+              <Importes
+                titulo="SUBTOTAL:"
+                valorMonto="20.00"
+                simboloMoneda="$"
+              />
+              <Importes
+                titulo="IGV 18% :"
+                valorMonto="3.60"
+                simboloMoneda="$"
+              />
+              <Importes
+                titulo="IMPORTE TOTAL:"
+                valorMonto="23.60"
+                simboloMoneda="$"
+              />
+            </section>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label htmlFor="observaciones">Observaciones:</label>
+            <textarea name="observaciones" rows="4" className="observaciones"></textarea>
+          </div>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "5px" }}
+          >
+            <button className="btnPanel">Guardar Cotización</button>
+            <button className="btnPanel" onClick={() => crearPdf(formData)}>Generar Factura</button>
+            <button className="btnPanel" >Cancelar</button>
+          </div>
         </div>
       </div>
     </div>

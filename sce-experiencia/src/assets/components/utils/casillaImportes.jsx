@@ -1,6 +1,6 @@
 const Importes = ({ titulo, valorMonto, simboloMoneda }) => {
   return (
-    <div style={{ display: "flex", fontWeight: "bold" }}>
+    <div style={{ display: "flex" }}>
       <p>{titulo}</p>
       <div style={{ display: "flex" }}>
         <p>{simboloMoneda}</p>
@@ -9,3 +9,5 @@ const Importes = ({ titulo, valorMonto, simboloMoneda }) => {
     </div>
   );
 };
+
+export default Importes;
