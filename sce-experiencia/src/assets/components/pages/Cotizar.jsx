@@ -66,17 +66,12 @@ const Cotizador = () => {
         <div></div>
         <div>
           <LabelInputs nombre="Moneda" />
-
-          <section>
-            <label htmlFor="metodoPago">Metodo de Pago:</label>
-            <input type="text" name="metodoPago" />
-          </section>
+          <LabelInputs nombre="Metodo de Pago" />
         </div>
         <div>
-          <section>
-            <label htmlFor="emision">Fecha de Emision:</label>
-            <input type="date" name="emision" id="emision" />
-          </section>
+          <LabelInputs nombre="Fecha de Emision" types="date" />
+
+
         </div>
         <div>
           <LabelInputs nombre="Numero Cotizacion" />
@@ -84,25 +79,25 @@ const Cotizador = () => {
         <div>
           <section>Resumen de Cotizacion</section>
           <section>
-            <div>
+            <div style={{ display: "flex" }}>
               <p>SUBTOTAL:</p>
-              <div>
+              <div style={{ display: "flex"}}>
                 <p>$</p>
-                <p>$20.00</p>
+                <p>20.00</p>
               </div>
             </div>
-            <div>
+            <div style={{ display: "flex"}}>
               <p>IGV 18% :</p>
-              <div>
+              <div style={{ display: "flex"}}>
                 <p>$</p>
-                <p>$3.60</p>
+                <p>3.60</p>
               </div>
             </div>
-            <div>
+            <div style={{ display: "flex", fontWeight: "bold" }}>
               <p>IMPORTE TOTAL:</p>
-              <div>
+              <div style={{ display: "flex"}}>
                 <p>$</p>
-                <p>$23.60</p>
+                <p>23.60</p>
               </div>
             </div>
           </section>

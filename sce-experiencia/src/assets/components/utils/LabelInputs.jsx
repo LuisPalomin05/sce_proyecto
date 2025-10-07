@@ -1,11 +1,11 @@
-const LabelInputs = ({ nombre, children }) => {
+const LabelInputs = ({ nombre, children, types }) => {
   return (
     <div className="labelInput">
       <label className="labelItem" htmlFor={nombre.replace(/\s+/g, "")}>
         {nombre}:
       </label>
       <div className="inputChildren">
-        <input className="inputDatos" type="text" name={nombre.replace(/\s+/g, "")} />
+        <input className="inputDatos" type={types =='' ? 'text': types} name={nombre.replace(/\s+/g, "")} />
          {children ? <div className="labelIcon">
           {children}
           </div>

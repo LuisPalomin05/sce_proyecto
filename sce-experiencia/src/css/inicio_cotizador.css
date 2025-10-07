@@ -43,6 +43,12 @@
   background: white;
 }
 
+.inputDatos[type="date"] {
+  padding: 2px 0 2px 2px;
+  border: 1px solid #828181;
+  height: 24px;
+}
+
 .inputChildren {
   display: flex;
   align-items: center;
