@@ -13,6 +13,8 @@ import {
 import InputBuscador from "./utils/InputBuscador";
 import Notificaciones from "./utils/bxNotificaciones";
 import Cotizador from "./pages/Cotizar";
+import Compras from "./pages/Compras";
+
 
 const Inicio = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -57,7 +59,7 @@ const Inicio = () => {
           <Route path="pedidos" element={<div>Página de Pedidos</div>} />
           <Route path="administracion"
             element={<div>Página de Gestión Cliente/Proveedor</div>}
-          />
+          /> 
         </Routes>
       </section>
     </div>
