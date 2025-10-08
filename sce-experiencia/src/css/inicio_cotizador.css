@@ -34,11 +34,12 @@
   background: #ebebeb;
   height: 20px;
   padding: 0 2px;
-    outline: 0.5px solid transparent;
+  outline: 0.5px solid transparent;
   box-sizing: border-box;
 }
 
-.inputDatos:focus,.inputDatos:active {
+.inputDatos:focus,
+.inputDatos:active {
   outline: 0.5px solid #257ef2;
   border-radius: 3px;
   background: white;
@@ -74,10 +75,10 @@
   color: black;
 }
 
-
-.desplegarPanel{
+.desplegarPanel {
+  margin: 15px 0 0 0;
   cursor: pointer;
-  border: 1px solid #787474;
+  border: 1px solid #C4C4C4;
   border-right: none;
   display: flex;
   align-items: center;
@@ -87,12 +88,19 @@
   border-bottom-left-radius: 5px;
 }
 
-.contenidoPanel{
+.lateralPanel {
+  width: 8%;
+}
+.contenidoPanel {
+  width: 91%;
+  gap: 5px;
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  border-left: 1px solid #C4C4C4;
 }
 
-.btnPanel{
+.btnPanel {
   background: #257ef2;
   color: white;
   border: none;
@@ -101,12 +109,86 @@
   cursor: pointer;
 }
 
-.btnPanel:nth-child(3){
-  background: #D9D9D9;
-  color: #403A3A;
+.btnPanel:nth-child(3) {
+  background: #d9d9d9;
+  color: #403a3a;
 }
 
-.observaciones{
-  border-radius: 10px;
-  margin: 5px 0;
+/*casillas*/
+
+.casillas {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 3px;
+  height: 22px;
+  width: 100%;
 }
+
+.simboloCasilla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d9d9d9;
+  width: 15px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.tituloCasilla{
+  width: 50%;
+  padding: 2px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.importesCasilla{
+  width: 50%;
+  display: flex; gap: 5px;
+  
+}
+
+.textoCasila {
+  color: #1e1e1e;
+  background: #FEF7F7;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+    padding: 2px;
+  width: 70%;
+}
+
+
+
+/* contenido panel tamaños */
+
+
+.MonedaPago{
+  height: 15%;
+}
+
+.FechaPanel{
+  height: 8%;
+}
+
+.NCotizacionPanel{
+  height: 8%;
+}
+
+.ResumenPanel{
+  height: 17%;
+}
+
+.observaciones {
+display: flex;
+flex-direction: column;
+gap: 3px;
+height: 22%;
+}
+.accionesPanel{
+  height: 19%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
