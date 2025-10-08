@@ -89,49 +89,53 @@ const Cotizador = () => {
         </div>
       </div>
       <div className="panel">
-        <div>
+        <div className="lateralPanel">
           <div className="desplegarPanel">
             <IonIcon icon={caretForwardOutline} />
           </div>
         </div>
         <div className="contenidoPanel">
-          <div>
+          <div className="MonedaPago">
             <LabelInputs nombre="Moneda" value={formData.moneda} onChange={handleChange} />
             <LabelInputs nombre="Metodo de Pago" value={formData.metodoPago} onChange={handleChange} />
           </div>
-          <div>
+
+          <div className="FechaPanel">
             <LabelInputs nombre="Fecha de Emision" types="date" value={formData.fechaEmision} onChange={handleChange} />
           </div>
-          <div>
+
+          <div className="NCotizacionPanel">
             <LabelInputs nombre="Numero Cotizacion" value={formData.numeroCotizacion} onChange={handleChange} />
           </div>
-          <div>
+
+          <div className="ResumenPanel">
             <section>Resumen de Cotizacion</section>
             <section>
               <Importes
-                titulo="SUBTOTAL:"
+                titulo="SUBTOTAL "
                 valorMonto="20.00"
                 simboloMoneda="$"
               />
               <Importes
-                titulo="IGV 18% :"
+                titulo="IGV 18% "
                 valorMonto="3.60"
                 simboloMoneda="$"
               />
               <Importes
-                titulo="IMPORTE TOTAL:"
+                titulo="IMPORTE TOTAL "
                 valorMonto="23.60"
                 simboloMoneda="$"
               />
             </section>
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+
+          <div className="observaciones">
             <label htmlFor="observaciones">Observaciones:</label>
-            <textarea name="observaciones" rows="4" className="observaciones"></textarea>
+            <textarea name="observaciones" rows="6" ></textarea>
           </div>
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "5px" }}
-          >
+
+          <div className="accionesPanel">
+          
             <button className="btnPanel">Guardar Cotización</button>
             <button className="btnPanel" onClick={() => crearPdf(formData)}>Generar Factura</button>
             <button className="btnPanel" >Cancelar</button>
