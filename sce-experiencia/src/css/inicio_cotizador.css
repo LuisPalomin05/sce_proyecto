@@ -10,6 +10,7 @@
   grid-area: formulario;
   /* border: 1px solid black; */
   height: 100%;
+
 }
 
 .panel {
@@ -110,3 +111,17 @@
   border-radius: 10px;
   margin: 5px 0;
 }
+
+table {
+        border-collapse: collapse;
+        width: 100%; /* Example: Make table span full width */
+                margin-top: 20px;
+    }
+
+th, td {
+        border: 1px solid #ccc; /* Light grey border for cells */
+        padding: 8px; /* Spacing inside cells */
+        text-align: left; /* Default text alignment */
+
+    }
+
