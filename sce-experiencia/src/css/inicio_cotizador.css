@@ -10,7 +10,7 @@
   grid-area: formulario;
   /* border: 1px solid black; */
   height: 100%;
-
+  padding-left: 20px;
 }
 
 .panel {
@@ -101,13 +101,16 @@
   border-left: 1px solid #C4C4C4;
 }
 
-.btnPanel {
+.btnPanel, .btnAgregar {
   background: #257ef2;
   color: white;
   border: none;
   height: 30px;
   border-radius: 5px;
   cursor: pointer;
+}
+.btnAgregar{
+  width: 200px;
 }
 
 .btnPanel:nth-child(3) {
@@ -199,6 +202,7 @@ table {
         border-collapse: collapse;
         width: 100%; /* Example: Make table span full width */
                 margin-top: 20px;
+                font-size: 12px;
     }
 
 th, td {

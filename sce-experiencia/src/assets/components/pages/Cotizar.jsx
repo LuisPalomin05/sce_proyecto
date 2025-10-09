@@ -55,7 +55,7 @@ const Cotizador = () => {
               <p>$.</p>
             </LabelInputs>
             <div>
-              <button>Agregar</button>
+              <button className="btnAgregar">Agregar</button>
             </div>
           </section>
         </div>

@@ -14,6 +14,7 @@ import InputBuscador from "./utils/InputBuscador";
 import Notificaciones from "./utils/bxNotificaciones";
 import Cotizador from "./pages/Cotizar";
 import Compras from "./pages/Compras";
+import Pedidos from "./pages/Pedidos";
 
 
 const Inicio = () => {
@@ -57,7 +58,7 @@ const Inicio = () => {
           <Route path="cotizar" element={<Cotizador/>} />
           <Route path="compras" element={<div>Página de Compras</div>} />
           <Route path="ventas" element={<div>Página de Ventas</div>} />
-          <Route path="pedidos" element={<div>Página de Pedidos</div>} />
+          <Route path="pedidos" element={<Pedidos />} />
           <Route path="administracion"
             element={<div>Página de Gestión Cliente/Proveedor</div>}
           /> 
