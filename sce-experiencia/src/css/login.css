@@ -1,51 +1,82 @@
-
-
-.login-page {
+.pagina-login {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
   background: url("../assets/img/fondo.jpg") no-repeat center center/cover;
+  font-family: Arial, sans-serif;
+  position: relative;
 }
 
-.login-box {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  width: 320px;
+.contenedor-superior-izquierdo {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  text-align: left;
+  color: #000000;
 }
 
-.login-box h2 {
+.logo-empresa {
+  width: 250px;
+  height: auto;
   margin-bottom: 20px;
-  font-size: 22px;
-  color: #2c3e50;
 }
 
-.login-box input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.titulo-empresa {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000000;
+  text-transform: uppercase;
+  width: 250px;
+}
+
+.formulario-login {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grupo-entrada {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.etiqueta-entrada {
+  font-weight: bold;
+  color: #000000;
   font-size: 14px;
+  margin-bottom: 5px;
 }
 
-.login-box button {
+.grupo-entrada input {
   width: 100%;
-  padding: 12px;
+  padding: 8px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+}
+
+.grupo-entrada input:focus {
+  outline: none;
+  border-color: #666666;
+}
+
+.boton-login {
+  width: 250px;
+  padding: 10px;
   background: #2c3e50;
-  color: #fff;
-  font-size: 15px;
+  color: #ffffff;
+  font-size: 14px;
   font-weight: bold;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
-.login-box button:hover {
+.boton-login:hover {
   background: #34495e;
 }
