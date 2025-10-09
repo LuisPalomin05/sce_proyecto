@@ -1,13 +1,12 @@
 body {
   font: normal medium/1.4 sans-serif;
 }
+
 table {
-  border-collapse: collapse;
-  width: 100%;
-      font-family: "Inter", sans-serif;
-  
+  font-family: "Inter", sans-serif;
 }
-th, td {
+th,
+td {
   padding: 0.25rem;
   text-align: left;
   border: 1px solid #ccc;
@@ -21,17 +20,16 @@ table {
   border-collapse: separate;
   box-shadow: inset 0 1px 0 #fff;
 
-  line-height: 24px;
-  margin: 30px auto;
   text-align: left;
   width: auto;
-} 
-
-
+}
 
 th:after {
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
-  content: '';
+  background: linear-gradient(
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.08)
+  );
+  content: "";
   /* display: block; */
   height: 25%;
   left: 0;
@@ -42,7 +40,7 @@ th:after {
 }
 
 th:first-child {
-  border-left: 1px solid #777;  
+  border-left: 1px solid #777;
   box-shadow: inset 1px 1px 0 #999;
 }
 
@@ -62,32 +60,24 @@ td {
 
 td:first-child {
   box-shadow: inset 1px 0 0 #fff;
-} 
+}
 
 td:last-child {
   border-right: 1px solid #e8e8e8;
   box-shadow: inset -1px 0 0 #fff;
-} 
-
-tr {
-  background: url(https://jackrugile.com/images/misc/noise-diagonal.png); 
-}
-
-tr:nth-child(odd) td {
-  background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png); 
 }
 
 tr:last-of-type td {
-  box-shadow: inset 0 -1px 0 #fff; 
+  box-shadow: inset 0 -1px 0 #fff;
 }
 
 tr:last-of-type td:first-child {
   box-shadow: inset 1px -1px 0 #fff;
-} 
+}
 
 tr:last-of-type td:last-child {
   box-shadow: inset -1px -1px 0 #fff;
-} 
+}
 
 tbody:hover td {
   color: transparent;
@@ -98,3 +88,26 @@ tbody:hover tr:hover td {
   color: #444;
   text-shadow: 0 1px 0 #fff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */

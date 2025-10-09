@@ -26,7 +26,41 @@ ChartJS.register(
 const Ventas = () => {
   return (
     <div>
-      <BarChart />
+
+      <div>
+        <div>
+          <p>Ventas</p>
+        </div>
+        <div>
+          <section>
+            <div>
+              <p>Ventas en Soles</p>
+              <p>20.00</p>
+            </div>
+            <div>
+              <p>Ventas en Dolares</p>
+              <p>5.00</p>
+            </div>
+          </section>
+          <section>
+            <div>
+                    <BarChart />
+            </div>
+          </section>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
       <div>
         <table>

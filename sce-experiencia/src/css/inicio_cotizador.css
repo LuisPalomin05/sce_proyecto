@@ -79,7 +79,7 @@
 .desplegarPanel {
   margin: 15px 0 0 0;
   cursor: pointer;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-right: none;
   display: flex;
   align-items: center;
@@ -98,10 +98,11 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border-left: 1px solid #C4C4C4;
+  border-left: 1px solid #c4c4c4;
 }
 
-.btnPanel, .btnAgregar {
+.btnPanel,
+.btnAgregar {
   background: #257ef2;
   color: white;
   border: none;
@@ -109,7 +110,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.btnAgregar{
+.btnAgregar {
   width: 200px;
 }
 
@@ -117,8 +118,6 @@
   background: #d9d9d9;
   color: #403a3a;
 }
-
-
 
 .casillas {
   display: flex;
@@ -139,56 +138,53 @@
   border-bottom-left-radius: 3px;
 }
 
-.tituloCasilla{
+.tituloCasilla {
   width: 50%;
   padding: 2px;
   display: flex;
   justify-content: space-around;
 }
 
-.importesCasilla{
+.importesCasilla {
   width: 50%;
-  display: flex; gap: 5px;
-  
+  display: flex;
+  gap: 5px;
 }
 
 .textoCasila {
   color: #1e1e1e;
-  background: #FEF7F7;
+  background: #fef7f7;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-    padding: 2px;
+  padding: 2px;
   width: 70%;
 }
 
-
-
 /* contenido panel tamaños */
 
-
-.MonedaPago{
+.MonedaPago {
   height: 15%;
 }
 
-.FechaPanel{
+.FechaPanel {
   height: 8%;
 }
 
-.NCotizacionPanel{
+.NCotizacionPanel {
   height: 8%;
 }
 
-.ResumenPanel{
+.ResumenPanel {
   height: 17%;
 }
 
 .observaciones {
-display: flex;
-flex-direction: column;
-gap: 3px;
-height: 22%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 22%;
 }
-.accionesPanel{
+.accionesPanel {
   height: 19%;
   display: flex;
   flex-direction: column;
@@ -196,15 +192,15 @@ height: 22%;
 }
 
 table {
-        border-collapse: collapse;
-        width: 100%; /* Example: Make table span full width */
-                margin-top: 20px;
-                font-size: 12px;
-    }
+  border-collapse: collapse;
+  width: 100%;
 
-th, td {
-        border: 1px solid #ccc; /* Light grey border for cells */
-        padding: 8px; /* Spacing inside cells */
-        text-align: left; /* Default text alignment */
+  font-size: 12px;
+}
 
-    }
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}

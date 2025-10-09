@@ -42,22 +42,13 @@ const BarChart = () => {
     scales: {
       y: {
         beginAtZero: true, // Iniciar el eje Y en 0
-        title: {
-          display: true,
-          text: 'Cifras',
-        },
       },
-      x: {
-        title: {
-          display: true,
-          text: 'Meses',
-        },
-      },
+
     },
   };
 
   return (
-    <div style={{ width: '600px', height: '400px', margin: '0 auto' }}>
+    <div style={{ width: '600px', height: '250px'}}>
       <Bar data={data} options={options} />
     </div>
   );
