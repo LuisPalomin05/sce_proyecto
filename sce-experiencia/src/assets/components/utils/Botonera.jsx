@@ -1,16 +1,11 @@
-import Botonera from "../utils/Botonera";
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
-const Compras = () => {
-    return (
-        <div>
-            <Botonera/>
+const Botonera = () => {
 
-        </div>
-    )
+<h1>Hola esta es mi sección botonera</h1>
+
 }
 
-
-export default Compras;
+export default Botonera;
