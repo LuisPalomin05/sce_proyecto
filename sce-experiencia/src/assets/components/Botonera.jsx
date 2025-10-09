@@ -1,7 +1,6 @@
 
 import ButtonOption from "./utils/button";
-import CardUsuario from "./utils/cardUsuario";
-import "../../css/slidebar.css";
+import "../../css/slidebar2.css"
 import { IonIcon } from "@ionic/react";
 import { clipboardSharp, cartOutline} from "ionicons/icons";
 
@@ -10,7 +9,7 @@ const Botonera = () => {
   return (
     <div className="slidebar">
    
-      <div>
+      <div class="contenedor">
         <ButtonOption titulo={"Revisar inventario"} icono={clipboardSharp} ruta={""}></ButtonOption>
         <ButtonOption titulo={"Ver registro de compras"} icono={cartOutline} ruta={""}></ButtonOption>
     
@@ -19,3 +18,4 @@ const Botonera = () => {
   );
 };
 export default Botonera;
+

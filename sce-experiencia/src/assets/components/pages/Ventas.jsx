@@ -14,6 +14,9 @@ import {
 import BarChart from "../utils/BarChart";
 import "../../../css/ventas.css";
 
+import Graphicbar from "../utils/Graphicbar"
+
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -27,30 +30,7 @@ const Ventas = () => {
   return (
     <div>
 
-      <div>
-        <div>
-          <p>Ventas</p>
-        </div>
-        <div>
-          <section>
-            <div>
-              <p>Ventas en Soles</p>
-              <p>20.00</p>
-            </div>
-            <div>
-              <p>Ventas en Dolares</p>
-              <p>5.00</p>
-            </div>
-          </section>
-          <section>
-            <div>
-                    <BarChart />
-            </div>
-          </section>
-        </div>
-      </div>
-
-
+    <Graphicbar Título={"Ventas"} importesoles={100} importedolares={5000}/>   
 
 
 
