@@ -1,0 +1,22 @@
+
+.graphicbar{
+    width: 100%;
+    display: flex;
+flex-direction: column;
+}
+
+.graphicbar-container{
+    display: flex;
+}
+
+
+.importes-container{
+    display: flex;
+        flex-direction: column;
+
+}
+.importes{
+    display: flex;
+        flex-direction: column;
+
+}
