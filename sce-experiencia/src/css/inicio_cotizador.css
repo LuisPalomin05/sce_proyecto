@@ -118,7 +118,7 @@
   color: #403a3a;
 }
 
-/*casillas*/
+
 
 .casillas {
   display: flex;
@@ -195,9 +195,6 @@ height: 22%;
   gap: 5px;
 }
 
-
-
-
 table {
         border-collapse: collapse;
         width: 100%; /* Example: Make table span full width */
@@ -211,4 +208,3 @@ th, td {
         text-align: left; /* Default text alignment */
 
     }
-

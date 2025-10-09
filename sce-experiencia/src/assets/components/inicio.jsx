@@ -15,7 +15,7 @@ import Notificaciones from "./utils/bxNotificaciones";
 import Cotizador from "./pages/Cotizar";
 import Compras from "./pages/Compras";
 import Pedidos from "./pages/Pedidos";
-
+import Ventas from "./pages/Ventas";
 
 const Inicio = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -57,7 +57,7 @@ const Inicio = () => {
           <Route path="/" element={<div>Página de Inicio</div>} />
           <Route path="cotizar" element={<Cotizador/>} />
           <Route path="compras" element={<div>Página de Compras</div>} />
-          <Route path="ventas" element={<div>Página de Ventas</div>} />
+          <Route path="ventas" element={<Ventas/>} />
           <Route path="pedidos" element={<Pedidos />} />
           <Route path="administracion"
             element={<div>Página de Gestión Cliente/Proveedor</div>}
