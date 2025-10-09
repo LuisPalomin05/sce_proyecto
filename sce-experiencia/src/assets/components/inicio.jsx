@@ -56,7 +56,7 @@ const Inicio = () => {
         <Routes>
           <Route path="/" element={<div>Página de Inicio</div>} />
           <Route path="cotizar" element={<Cotizador/>} />
-          <Route path="compras" element={<div>Página de Compras</div>} />
+          <Route path="compras" element={<Compras/>} />
           <Route path="ventas" element={<Ventas/>} />
           <Route path="pedidos" element={<Pedidos />} />
           <Route path="administracion"

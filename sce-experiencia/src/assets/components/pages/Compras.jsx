@@ -1,4 +1,4 @@
-import Botonera from "../utils/Botonera";
+import Botonera from "../Botonera";
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
@@ -6,7 +6,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 const Compras = () => {
     return (
         <div>
-            <Botonera/>
+            <Botonera />
 
         </div>
     )
