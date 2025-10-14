@@ -1,22 +1,61 @@
+.graphicbar {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  font-size: 14px;
 
-.graphicbar{
-    width: 100%;
-    display: flex;
-flex-direction: column;
+  padding: 10px;
 }
 
-.graphicbar-container{
-    display: flex;
+.graphicbar-container {
+  display: flex;
+  height: 80%;
+  width: 100%;
+  gap: 5px;
 }
 
-
-.importes-container{
-    display: flex;
-        flex-direction: column;
-
+.importes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 15%;
+  height: 100%;
 }
-.importes{
-    display: flex;
-        flex-direction: column;
+.importes {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  height: 60px;
+  font-size: 1em;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 5px;
+  background: #e0dddd4c;
+}
 
+.graphicbar-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2px;
+  padding: 2px;
+  color: #403a3a;
+  background: white;
+  border: 2px solid #a9a9a97f;
+border-radius: 5px;
+  width: 10%;
+  max-height: 30px;
+}
+
+.leyenda {
+  display: flex;
+  width: 100%;
+}
+.graphic {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #a9a9a97f;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }

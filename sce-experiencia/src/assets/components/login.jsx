@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../css/login.css";
 
+import SvgIcon from "../img/logo.svg.jsx";
+
 function Login({ validacion }) {
   const navigate = useNavigate();
   const [empresa, setEmpresa] = useState("");
@@ -14,10 +16,15 @@ function Login({ validacion }) {
     navigate("/dashboard"); 
   };
 
+
   return (
     <div className="pagina-login">
       <div className="contenedor-superior-izquierdo">
-        <img src="../src/assets/img/logo.svg" alt="Logo" className="logo-empresa" />
+        
+<div className="logoTitulo">
+<SvgIcon size={60} />
+<p>SCE</p>
+</div>
         
         <form onSubmit={manejarLogin} className="formulario-login">
 
