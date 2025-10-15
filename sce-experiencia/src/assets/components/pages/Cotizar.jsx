@@ -30,7 +30,7 @@ const Cotizador = () => {
   return (
     <div className="Cotizador">
       <div className="formulario">
-        <div class="Completar">
+        <div className="Completar">
           <section
             style={{ display: "flex", gap: "10px", alignItems: "center" }}
           >

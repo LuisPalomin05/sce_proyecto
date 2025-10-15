@@ -10,7 +10,7 @@ const Botonera = () => {
     
     <div className="slidebar">
    <p>Hola mundo</p>
-      <div class="contenedor">
+      <div className="contenedor">
         <ButtonOption titulo={"Revisar inventario"} icono={clipboardSharp} ruta={""}></ButtonOption>
         <ButtonOption titulo={"Ver registro de compras"} icono={cartOutline} ruta={""}></ButtonOption>
     
