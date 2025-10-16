@@ -1,8 +1,22 @@
-import jsPDF from "jspdf";
+import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
-import torque from "../../img/torque.png";
+import torque from "../../img/torquelogo.jpg";
 
 export const crearPdf = (data) => {
+  let datos = {
+    nombre: "",
+    ruc: "",
+    producto: "",
+    codigo: "",
+    cantidad: "",
+    precioUnitario: "",
+    fechaEmision: "",
+    numeroCotizacion: "",
+    observaciones: "",
+  };
+
+  datos = { ...data };
+
   const doc = new jsPDF();
 
   // --- LOGO ---
@@ -25,15 +39,36 @@ export const crearPdf = (data) => {
 
   // --- DATOS DEL CLIENTE ---
   doc.setFontSize(8);
-  doc.text(`SEÑOR(ES) : `, 14, 42);
-  doc.text("RUC : ", 14, 47);
-  doc.text(`DIRECCION : `, 14, 52);
-  doc.text(`FECHA EMISION : `, 130, 42);
-  doc.text("TIPO DE MONEDA : ", 130, 47);
-  doc.text(`METODO DE PAGO : `, 130, 52);
+  doc.text(`SEÑOR(ES) `, 14, 42);
+  doc.text(`:`, 31, 42);
+
+  doc.text(`${data.nombre}`, 34, 42);
+
+  doc.text("RUC  ", 14, 47);
+  doc.text(`${data.ruc}`, 34, 47);
+  doc.text(`:`, 31, 47);
+
+  doc.text(`DIRECCION`, 14, 52);
+  doc.text(`:`, 31, 52);
+
+  doc.text(`FECHA EMISION`, 130, 42);
+  doc.text(`:`, 160, 42);
+
+  doc.text("TIPO DE MONEDA", 130, 47);
+  doc.text(`:`, 160, 47);
+
+  doc.text(`METODO DE PAGO`, 130, 52);
+  doc.text(`:`, 160, 52);
 
   // --- TABLA ---
-  const columns = ["N° item", "Código", "Descripción", "Cantidad", "Precio", "Subtotal"];
+  const columns = [
+    "N° item",
+    "Código",
+    "Descripción",
+    "Cantidad",
+    "Precio",
+    "Subtotal",
+  ];
   const rows = [
     [1, "TOR-001", "Perno 1/2 cabeza hexagonal", 10, "S/ 2.50", "S/ 25.00"],
     [2, "TOR-002", "Tuerca M12 galvanizada", 10, "S/ 1.50", "S/ 15.00"],
@@ -47,14 +82,14 @@ export const crearPdf = (data) => {
     theme: "grid",
     headStyles: { fillColor: [63, 81, 181], textColor: 255, halign: "center" },
     styles: { fontSize: 8, cellPadding: 2 },
-    // columnStyles: {
-    //   0: { halign: "center", cellWidth: 15 },
-    //   1: { halign: "center", cellWidth: 25 },
-    //   2: { cellWidth: 70 },
-    //   3: { halign: "right", cellWidth: 20 },
-    //   4: { halign: "right", cellWidth: 25 },
-    //   5: { halign: "right", cellWidth: 25 },
-    // },
+    columnStyles: {
+      0: { halign: "center", cellWidth: 5 },
+      1: { halign: "center", cellWidth: 15 },
+      2: { cellWidth: 70 },
+      3: { halign: "right", cellWidth: 20 },
+      4: { halign: "right", cellWidth: 25 },
+      5: { halign: "right", cellWidth: 25 },
+    },
   });
 
   // --- POSICIÓN FINAL DE LA TABLA ---
@@ -65,17 +100,24 @@ export const crearPdf = (data) => {
 
   // --- TOTALES ---
   const yTotales = finalY;
-  doc.setDrawColor(0, 0, 255);
+  doc.setDrawColor(199, 199, 199);
+  doc.setLineWidth(0.2);
   doc.roundedRect(145, yTotales, 45, 25, 1.5, 1.5);
   doc.setFontSize(9);
   doc.text(`SUBTOTAL`, 147.5, yTotales + 5);
   doc.text(": ", 170, yTotales + 5);
+  doc.setLineWidth(0.2);
+
   doc.line(145, yTotales + 8, 190, yTotales + 8);
   doc.text(`IGV (18%)`, 147.5, yTotales + 13);
   doc.text(": ", 170, yTotales + 13);
+  doc.setLineWidth(0.2);
+
   doc.line(145, yTotales + 16, 190, yTotales + 16);
   doc.text(`TOTAL`, 147.5, yTotales + 22);
   doc.text(": ", 170, yTotales + 22);
+  doc.setLineWidth(0.2);
+
   doc.line(166, yTotales, 166, yTotales + 25);
 
   // --- GUARDAR PDF ---

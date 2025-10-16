@@ -5,28 +5,43 @@ import { searchOutline, caretForwardOutline } from "ionicons/icons";
 import "../../../css/inicio_cotizador.css";
 
 import LabelInputs from "../utils/LabelInputs";
+import OptionInputs from "../utils/OptionInputs";
+
 import Importes from "../utils/casillaImportes";
 
 import { crearPdf } from "../utils/crearPdf";
 
 const Cotizador = () => {
+
+    const [fechaSeleccionada, setFechaSeleccionada] = useState(new Date().toISOString().split("T")[0]);
+
+    const formatearFecha = (fecha) => {
+      const opciones = { year: "numeric", month: "2-digit", day: "2-digit" };
+      return new Date(fecha).toLocaleDateString("es-PE", opciones);
+    }
+
   const [formData, setFormData] = useState({
     nombre: "",
     ruc: "",
-    producto: "",
+    direccion:"",
+    producto: [],
     codigo: "",
     cantidad: "",
     precioUnitario: "",
-    fechaEmision: "",
+    fechaEmision: fechaSeleccionada,
     numeroCotizacion: "",
     observaciones: "",
   });
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const MetodoPagoArr = ["Contado","Crédito","Credito 7 dias","Credito 15 dias","Credito 30 dias","Credito 60 dias","Credito 90 dias"];
+const MonedaArr =["Soles (S/)","Dólares (USD)"];
   return (
     <div className="Cotizador">
       <div className="formulario">
@@ -96,12 +111,12 @@ const Cotizador = () => {
         </div>
         <div className="contenidoPanel">
           <div className="MonedaPago">
-            <LabelInputs nombre="Moneda" value={formData.moneda} onChange={handleChange} />
-            <LabelInputs nombre="Metodo de Pago" value={formData.metodoPago} onChange={handleChange} />
+            <OptionInputs nombre="Moneda" value={formData.moneda} options={MonedaArr} onChange={handleChange} />
+            <OptionInputs nombre="Metodo de Pago" value={formData.metodoPago} options={MetodoPagoArr} onChange={handleChange} />
           </div>
 
           <div className="FechaPanel">
-            <LabelInputs nombre="Fecha de Emision" types="date" value={formData.fechaEmision} onChange={handleChange} />
+            <LabelInputs nombre="Fecha de Emision" types="date" value={formatearFecha(fechaSeleccionada)} onChange={(e) => setFechaSeleccionada(e.target.value)} />
           </div>
 
           <div className="NCotizacionPanel">
