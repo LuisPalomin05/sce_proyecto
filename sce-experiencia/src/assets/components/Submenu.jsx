@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import ButtonOption from "./utils/button";
 import "../../css/slidebar.css";
 import { IonIcon } from "@ionic/react";
@@ -5,11 +6,15 @@ import { clipboardOutline, timeOutline} from "ionicons/icons";
 
 const Submenu  = () =>{
 
-    const listaEspera = () =>{
-    console.log('Vista Lista de Espera');   }
+    const [greeting, setGreeting] = useState("Vista de Lista de Espera");
 
-    const gestionarPedidos = () =>{
-    console.log('Vista Gestionar Pedidos');   }
+    const listaEspera = () => {
+        setGreeting("Vista de Lista de Espera");
+    };
+
+    const gestionarPedidos = () => {
+        setGreeting("Vista de Gestionar Pedidos");
+    };
 
     return(
     <div>
@@ -26,7 +31,7 @@ const Submenu  = () =>{
          </button>
          </div>
 
-        <div> "Hola, aca iran las vistas" </div>
+        <div>  {greeting} </div>
         </div>
 
     </div>
