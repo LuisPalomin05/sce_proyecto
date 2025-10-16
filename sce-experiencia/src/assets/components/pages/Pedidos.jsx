@@ -1,10 +1,10 @@
-import Submenu from "../submenu";
+import Submenu from "../Submenu";
  
  const Pedidos = () => {
     return (     
         <div>
 
-        <h1>Esta es la vista pedidos.jsx </h1>
+
         <Submenu/> 
 
 

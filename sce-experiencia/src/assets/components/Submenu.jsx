@@ -1,44 +1,59 @@
 import React, { useState } from 'react';
 import ButtonOption from "./utils/button";
-import "../../css/slidebar.css";
-import { IonIcon } from "@ionic/react";
-import { clipboardOutline, timeOutline} from "ionicons/icons";
+import "../../css/slidebar2.css";
+import { clipboardOutline, timeOutline } from "ionicons/icons";
 
-const Submenu  = () =>{
+import ListaEspera from "../vistas/ListaEspera.jsx";
+import GestionarPedidos from "../vistas/GestionarPedidos.jsx";
 
-    const [greeting, setGreeting] = useState("Vista de Lista de Espera");
-
-    const listaEspera = () => {
-        setGreeting("Vista de Lista de Espera");
+const Submenu = () => {
+const [vistaActual, setVistaActual] = useState('listaEspera');
+    const mostrarListaEspera = () => {
+        setVistaActual('listaEspera');
     };
 
-    const gestionarPedidos = () => {
-        setGreeting("Vista de Gestionar Pedidos");
+    const mostrarGestionarPedidos = () => {
+        setVistaActual('gestionarPedidos');
     };
 
-    return(
-    <div>
-    <div>
-            
-        <h1> Este es el componente submenu</h1>
-        <div className="slidebar">
-         <div>
-        <button onClick={listaEspera}>
-         <ButtonOption titulo={"Lista de Espera"} icono={timeOutline} ruta={""}></ButtonOption>
-         </button>
-         <button onClick={gestionarPedidos}>
-         <ButtonOption titulo={"Gestionar Pedidos"} icono={clipboardOutline} ruta={""}></ButtonOption>
-         </button>
-         </div>
+    const renderizarVista = () => {
+        switch (vistaActual) {
+            case 'listaEspera':
+                return <ListaEspera />;    
+            case 'gestionarPedidos':
+                return <GestionarPedidos />;
+                return 
+                  <ListaEspera />;
+        }
+    };
 
-        <div>  {greeting} </div>
+    return (
+        <div class="cuerpo">
+            <div>
+                <div className="slidebar">
+                    <div>
+                        <button onClick={mostrarListaEspera}>
+                            <ButtonOption 
+                                titulo="Lista de Espera" 
+                                icono={timeOutline} 
+                                ruta=""
+                            />
+                        </button>
+                        <button onClick={mostrarGestionarPedidos}>
+                            <ButtonOption 
+                                titulo="Gestionar Pedidos" 
+                                icono={clipboardOutline} 
+                                ruta=""
+                            />
+                        </button>
+                    </div>                  
+                    <div style={{ marginTop: '20px' }}>
+                        {renderizarVista()}
+                    </div>
+                </div>
+            </div>
         </div>
-
-    </div>
-    </div>
-    )
-
+    );
 };
+
 export default Submenu;
-
-
