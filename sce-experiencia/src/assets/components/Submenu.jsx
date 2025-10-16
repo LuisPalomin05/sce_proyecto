@@ -41,7 +41,7 @@ const [vistaActual, setVistaActual] = useState('listaEspera');
                         </button>
                         <button onClick={mostrarGestionarPedidos}>
                             <ButtonOption 
-                                titulo="Gestionar Pedidos" 
+                                titulo="Gestionar Pedidos en Cola" 
                                 icono={clipboardOutline} 
                                 ruta=""
                             />
