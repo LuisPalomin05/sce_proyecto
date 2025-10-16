@@ -41,12 +41,11 @@ export const crearPdf = (data) => {
   doc.setFontSize(8);
   doc.text(`SEÑOR(ES) `, 14, 42);
   doc.text(`:`, 31, 42);
-
   doc.text(`${data.nombre}`, 34, 42);
 
   doc.text("RUC  ", 14, 47);
-  doc.text(`${data.ruc}`, 34, 47);
   doc.text(`:`, 31, 47);
+  doc.text(`${data.ruc}`, 34, 47);
 
   doc.text(`DIRECCION`, 14, 52);
   doc.text(`:`, 31, 52);
@@ -83,9 +82,9 @@ export const crearPdf = (data) => {
     headStyles: { fillColor: [63, 81, 181], textColor: 255, halign: "center" },
     styles: { fontSize: 8, cellPadding: 2 },
     columnStyles: {
-      0: { halign: "center", cellWidth: 5 },
-      1: { halign: "center", cellWidth: 15 },
-      2: { cellWidth: 70 },
+      0: { halign: "center", cellWidth: 10 },
+      1: { halign: "center", cellWidth: 18 },
+      2: { cellWidth: 75 },
       3: { halign: "right", cellWidth: 20 },
       4: { halign: "right", cellWidth: 25 },
       5: { halign: "right", cellWidth: 25 },
