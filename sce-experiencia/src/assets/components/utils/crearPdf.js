@@ -1,10 +1,11 @@
 import jsPDF from "jspdf";
+import torque from "../../img/torque.png";
 
 export const crearPdf = (data) => {
   const doc = new jsPDF();
 
   // imagen de logo
-
+  doc.addImage(torque, "PNG", 8, 8, 30, 30);
   // titulo y texto de la cotizacion
   doc.setFontSize(14);
   doc.text("PERNOS Y TUERCAS TORQUE-G46 SAC", 50, 18);
@@ -59,10 +60,15 @@ export const crearPdf = (data) => {
   doc.text("Observaciones : ", 14, 250);
 
   //totales
-  doc.roundedRect(145, 120, 45, 20, 2, 2);
-  doc.text(`SUBTOTAL : `, 150, 125);
-  doc.text(`IGV (18%) : `, 150, 131);
-  doc.text(`TOTAL : `, 150, 117);
+  doc.roundedRect(145, 170, 45, 25, 2, 2);
+  doc.text(`SUBTOTAL : `, 148, 175);
+  doc.line(145,178,190,178);
+  doc.text(`IGV (18%) : `, 148, 183.5);
+    doc.line(145,186,190,186);
+
+  doc.text(`TOTAL : `, 148, 192);
+    doc.line(160,170,190,178);
+
 
   doc.save("cotizacion.pdf");
 };
