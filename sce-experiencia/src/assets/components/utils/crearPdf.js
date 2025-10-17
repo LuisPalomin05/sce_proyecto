@@ -3,19 +3,7 @@ import autoTable from "jspdf-autotable";
 import torque from "../../img/torquelogo.jpg";
 
 export const crearPdf = (data) => {
-  let datos = {
-    nombre: "",
-    ruc: "",
-    producto: "",
-    codigo: "",
-    cantidad: "",
-    precioUnitario: "",
-    fechaEmision: "",
-    numeroCotizacion: "",
-    observaciones: "",
-  };
-
-  datos = { ...data };
+  let datos = { ...data };
 
   const doc = new jsPDF();
 
@@ -41,23 +29,29 @@ export const crearPdf = (data) => {
   doc.setFontSize(8);
   doc.text(`SEÑOR(ES) `, 14, 42);
   doc.text(`:`, 31, 42);
-  doc.text(`${data.nombre}`, 34, 42);
+  doc.text(`${datos.nombreCliente}`, 34, 42);
 
   doc.text("RUC  ", 14, 47);
   doc.text(`:`, 31, 47);
-  doc.text(`${data.ruc}`, 34, 47);
+  doc.text(`${datos.rucCliente}`, 34, 47);
 
   doc.text(`DIRECCION`, 14, 52);
   doc.text(`:`, 31, 52);
+  doc.text(`${datos.direccion}`, 34, 52);
 
   doc.text(`FECHA EMISION`, 130, 42);
   doc.text(`:`, 160, 42);
+  doc.text(`${datos.fechaEmision}`, 163, 42);
+
+  console.log(datos.tipoMoneda);
 
   doc.text("TIPO DE MONEDA", 130, 47);
   doc.text(`:`, 160, 47);
+  doc.text(`${datos.tipoMoneda}`, 163, 47);
 
   doc.text(`METODO DE PAGO`, 130, 52);
   doc.text(`:`, 160, 52);
+  doc.text(`${datos.metodoPago}`, 163, 52);
 
   // --- TABLA ---
   const columns = [
@@ -68,11 +62,14 @@ export const crearPdf = (data) => {
     "Precio",
     "Subtotal",
   ];
-  const rows = [
-    [1, "TOR-001", "Perno 1/2 cabeza hexagonal", 10, "S/ 2.50", "S/ 25.00"],
-    [2, "TOR-002", "Tuerca M12 galvanizada", 10, "S/ 1.50", "S/ 15.00"],
-    [3, "TOR-003", "Arandela plana M12", 10, "S/ 0.50", "S/ 5.00"],
-  ];
+  const rows = datos.producto.map((item, index) => [
+    index + 1,
+    item[1],
+    item[2],
+    item[3],
+    parseFloat(item[4]).toFixed(2),
+    (parseFloat(item[3]) * parseFloat(item[4])).toFixed(2),
+  ]);
 
   autoTable(doc, {
     head: [columns],
@@ -84,10 +81,10 @@ export const crearPdf = (data) => {
     columnStyles: {
       0: { halign: "center", cellWidth: 10 },
       1: { halign: "center", cellWidth: 18 },
-      2: { cellWidth: 75 },
+      2: { cellWidth: 94 },
       3: { halign: "right", cellWidth: 20 },
-      4: { halign: "right", cellWidth: 25 },
-      5: { halign: "right", cellWidth: 25 },
+      4: { halign: "right", cellWidth: 20 },
+      5: { halign: "right", cellWidth: 20 },
     },
   });
 
@@ -96,6 +93,7 @@ export const crearPdf = (data) => {
 
   // --- OBSERVACIONES ---
   doc.text("Observaciones :", 14, finalY);
+  doc.text(`${datos.observaciones}`, 14, finalY + 6);
 
   // --- TOTALES ---
   const yTotales = finalY;
