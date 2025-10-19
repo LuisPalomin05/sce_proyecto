@@ -34,7 +34,7 @@ const Ventas = () => {
 
     <p>Hola mundo</p>
 
-
+<p> este comentario es de baja prioridad</p>
 
 
 
