@@ -16,6 +16,7 @@ import Cotizador from "./pages/Cotizar";
 import Compras from "./pages/Compras";
 import Pedidos from "./pages/Pedidos";
 import Ventas from "./pages/Ventas";
+import PaginaInicio from "./pages/PaginaInicio";
 
 const Inicio = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -54,7 +55,7 @@ const Inicio = () => {
 
       <section className="Contentido">
         <Routes>
-          <Route path="/" element={<div>Página de Inicio</div>} />
+          <Route path="/" element={<PaginaInicio/>} />
           <Route path="cotizar" element={<Cotizador/>} />
           <Route path="compras" element={<Compras/>} />
           <Route path="ventas" element={<Ventas/>} />
