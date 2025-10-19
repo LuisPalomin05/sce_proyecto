@@ -1,68 +1,122 @@
-import jsPDF from "jspdf";
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
+import torque from "../../img/torquelogo.jpg";
 
 export const crearPdf = (data) => {
+  let datos = { ...data };
+
   const doc = new jsPDF();
 
-  // imagen de logo
+  // --- LOGO ---
+  doc.addImage(torque, "PNG", 8, 8, 30, 30);
 
-  // titulo y texto de la cotizacion
+  // --- TÍTULO Y CABECERA ---
   doc.setFontSize(14);
   doc.text("PERNOS Y TUERCAS TORQUE-G46 SAC", 50, 18);
   doc.setFontSize(8);
   doc.text("CALLE HOLANDA 2250 URB. CHACRA RIOS NORTE - LIMA", 56, 23);
-  doc.setFontSize(8);
   doc.text("E-mail : ventas@torqueg46.com.pe  // Tel : 999999999", 60, 27);
 
-  //datos del documento
+  // --- DATOS DEL DOCUMENTO (RUC / COTIZACIÓN) ---
   doc.setLineWidth(0.5);
   doc.roundedRect(155, 13, 45, 20, 2, 2);
   doc.setFontSize(10);
   doc.text(`R.U.C : 207030551312`, 160, 18);
-  doc.setFontSize(10);
   doc.text("COTIZACION", 165, 24);
-  doc.setFontSize(10);
   doc.text(`F001-00000`, 168, 30);
 
-  //datos del cliente
+  // --- DATOS DEL CLIENTE ---
   doc.setFontSize(8);
-  doc.text(`SEÑOR(ES) : `, 14, 42);
-  doc.text("RUC : ", 14, 47);
-  doc.text(`DIRECCION : `, 14, 52);
-  //!!
-  doc.setFontSize(8);
-  doc.text(`FECHA EMISION : `, 130, 42);
-  doc.text("TIPO DE MONEDA : ", 130, 47);
-  doc.text(`METODO DE PAGO : `, 130, 52);
-  //!!
+  doc.text(`SEÑOR(ES) `, 14, 42);
+  doc.text(`:`, 31, 42);
+  doc.text(`${datos.nombreCliente}`, 34, 42);
 
-  //tabla de productos
-  // const startY = 60;
-  // const tableColumn = ["CANT.", "DESCRIPCION", "P.UNIT", "IMPORTE"];
-  // const tableRows = [];
-  // data.forEach((item) => {
-  //   const itemData = [
-  //     item.cantidad,
-  //     item.descripcion,
-  //     item.precioUnitario,
-  //     item.importe
-  //   ];
-  //   tableRows.push(itemData);
-  // });
+  doc.text("RUC  ", 14, 47);
+  doc.text(`:`, 31, 47);
+  doc.text(`${datos.rucCliente}`, 34, 47);
 
-  // doc.autoTable({
-  //   startY: startY,
-  //   head: [tableColumn],
-  //   body: tableRows,
-  // });
+  doc.text(`DIRECCION`, 14, 52);
+  doc.text(`:`, 31, 52);
+  doc.text(`${datos.direccion}`, 34, 52);
 
-  //Observaciones y totales
-  doc.text("Observaciones : ", 14, 250);
+  doc.text(`FECHA EMISION`, 130, 42);
+  doc.text(`:`, 160, 42);
+  doc.text(`${datos.fechaEmision}`, 163, 42);
 
-  //totales
-  doc.roundedRect(145, 120, 45, 20, 2, 2);
-  doc.text(`SUBTOTAL : `, 150, 125);
-  doc.text(`IGV (18%) : `, 150, 131);
-  doc.text(`TOTAL : `, 150, 117);
+  console.log(datos.tipoMoneda);
 
+  doc.text("TIPO DE MONEDA", 130, 47);
+  doc.text(`:`, 160, 47);
+  doc.text(`${datos.tipoMoneda}`, 163, 47);
+
+  doc.text(`METODO DE PAGO`, 130, 52);
+  doc.text(`:`, 160, 52);
+  doc.text(`${datos.metodoPago}`, 163, 52);
+
+  // --- TABLA ---
+  const columns = [
+    "N° item",
+    "Código",
+    "Descripción",
+    "Cantidad",
+    "Precio",
+    "Subtotal",
+  ];
+  const rows = datos.producto.map((item, index) => [
+    index + 1,
+    item[1],
+    item[2],
+    item[3],
+    parseFloat(item[4]).toFixed(2),
+    (parseFloat(item[3]) * parseFloat(item[4])).toFixed(2),
+  ]);
+
+  autoTable(doc, {
+    head: [columns],
+    body: rows,
+    startY: 60, // Evita solapar el encabezado
+    theme: "grid",
+    headStyles: { fillColor: [63, 81, 181], textColor: 255, halign: "center" },
+    styles: { fontSize: 8, cellPadding: 2 },
+    columnStyles: {
+      0: { halign: "center", cellWidth: 10 },
+      1: { halign: "center", cellWidth: 18 },
+      2: { cellWidth: 94 },
+      3: { halign: "right", cellWidth: 20 },
+      4: { halign: "right", cellWidth: 20 },
+      5: { halign: "right", cellWidth: 20 },
+    },
+  });
+
+  // --- POSICIÓN FINAL DE LA TABLA ---
+  const finalY = doc.lastAutoTable.finalY + 10;
+
+  // --- OBSERVACIONES ---
+  doc.text("Observaciones :", 14, finalY);
+  doc.text(`${datos.observaciones}`, 14, finalY + 6);
+
+  // --- TOTALES ---
+  const yTotales = finalY;
+  doc.setDrawColor(199, 199, 199);
+  doc.setLineWidth(0.2);
+  doc.roundedRect(145, yTotales, 45, 25, 1.5, 1.5);
+  doc.setFontSize(9);
+  doc.text(`SUBTOTAL`, 147.5, yTotales + 5);
+  doc.text(": ", 170, yTotales + 5);
+  doc.setLineWidth(0.2);
+
+  doc.line(145, yTotales + 8, 190, yTotales + 8);
+  doc.text(`IGV (18%)`, 147.5, yTotales + 13);
+  doc.text(": ", 170, yTotales + 13);
+  doc.setLineWidth(0.2);
+
+  doc.line(145, yTotales + 16, 190, yTotales + 16);
+  doc.text(`TOTAL`, 147.5, yTotales + 22);
+  doc.text(": ", 170, yTotales + 22);
+  doc.setLineWidth(0.2);
+
+  doc.line(166, yTotales, 166, yTotales + 25);
+
+  // --- GUARDAR PDF ---
   doc.save("cotizacion.pdf");
 };

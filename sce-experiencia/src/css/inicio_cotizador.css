@@ -163,6 +163,8 @@
 /* contenido panel tamaños */
 
 .MonedaPago {
+  display: flex;
+  gap: 5px;
   height: 15%;
 }
 
@@ -203,4 +205,24 @@ td {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: left;
+}
+
+.ContenedorOpciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 45%;
+}
+.ContenedorOpciones select{
+    height: 24px;
+
+}
+.ContenedorOpciones option {
+  background: #1c1c1c;
+  color: white;
+  cursor: pointer;
+}
+
+.ContenedorOpciones option:hover {
+  background: #257ef2;
 }
