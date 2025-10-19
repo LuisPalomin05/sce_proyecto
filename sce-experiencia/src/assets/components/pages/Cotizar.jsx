@@ -33,7 +33,7 @@ const Cotizador = () => {
   const [tipoMoneda, setTipoMoneda] = useState(MonedaArr[0]);
   const [metodoPago, setMetodoPago] = useState(MetodoPagoArr[0]);
 
-  // Inputs temporales para crear un producto
+  // datos de un producto
   const [descripcion, setDescripcion] = useState("");
   const [codigo, setCodigo] = useState("");
   const [cantidad, setCantidad] = useState("");
@@ -45,7 +45,8 @@ const Cotizador = () => {
   const [numeroCotizacion, setNumeroCotizacion] = useState("");
   const [observaciones, setObservaciones] = useState("");
 
-  // Datos que pasan al PDF / guardar
+  
+  // Datos que pasan al PDF / guardar modelo
   const formData = {
     nombreCliente,
     rucCliente,
@@ -58,14 +59,14 @@ const Cotizador = () => {
     observaciones,
   };
 
-  // --- Helpers ---
+  // --- formato de moneda ---
   const formatMoney = (value) =>
     Number(value).toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
 
-  // Cálculos
+  // Cálculos de totales
   const subtotal = producto.reduce((acc, p) => acc + Number(p.total), 0);
   const igv = +(subtotal * 0.18).toFixed(2);
   const total = +(subtotal + igv).toFixed(2);
@@ -73,7 +74,6 @@ const Cotizador = () => {
 
   // --- Manejo de productos ---
   const handleAgregarProducto = () => {
-    // Validaciones básicas
     const desc = descripcion.trim();
     if (!desc) {
       alert("Ingresa una descripción del producto.");
@@ -95,7 +95,7 @@ const Cotizador = () => {
     const totalProducto = parseFloat((qty * price).toFixed(2));
 
     const nuevoProducto = {
-      id: Date.now(), // id simple
+      id: Date.now(),
       descripcion: desc,
       codigo: codigo.trim(),
       cantidad: qty,
@@ -105,16 +105,21 @@ const Cotizador = () => {
 
     setProducto((prev) => [...prev, nuevoProducto]);
 
-    console.log(producto)
+    console.log(producto);
 
-    // Limpiar inputs de producto
+    // Limpiar inputs de producto al agregar
     setDescripcion("");
     setCodigo("");
     setCantidad("");
     setPrecioUnitario("");
   };
 
+  //eliminar un producto
   const handleEliminarProducto = (id) => {
+    setProducto((prev) => prev.filter((p) => p.id !== id));
+  };
+
+  const handleEditarProducto = (id) => {
     setProducto((prev) => prev.filter((p) => p.id !== id));
   };
 
@@ -161,11 +166,13 @@ const Cotizador = () => {
           >
             <LabelInputs
               nombre="Cantidad"
+              types="number"
               value={cantidad}
               onChange={(e) => setCantidad(e.target.value)}
             />
             <LabelInputs
               nombre="Precio Unitario"
+              types="number"
               value={precioUnitario}
               onChange={(e) => setPrecioUnitario(e.target.value)}
             >

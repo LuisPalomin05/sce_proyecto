@@ -165,15 +165,21 @@
 .MonedaPago {
   display: flex;
   gap: 5px;
-  height: 15%;
+  height: 9%;
 }
 
 .FechaPanel {
-  height: 8%;
+  height: 10%;
+}
+.FechaPanel .inputDatos[type="date"]{
+  width: 90%;
 }
 
 .NCotizacionPanel {
   height: 8%;
+}
+.NCotizacionPanel input[type="text"]{
+ width: 90%;
 }
 
 .ResumenPanel {
