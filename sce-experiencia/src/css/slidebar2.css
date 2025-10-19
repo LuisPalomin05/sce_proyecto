@@ -3,10 +3,8 @@
 .padreBoton {
   color: rgb(31, 29, 29);
   margin: 2px;
-
   padding: 6px;
-  
-  cursor: pointer; /*la propiedad cursor le indica al navegador que modo de cursor debe aplicarse*/
+  cursor: pointer; 
   border-radius: 4px;
   border-color: rgb(236, 245, 245);
 }
@@ -17,7 +15,8 @@
 
 }
 .cuerpo {
-/* aca se modifico la propiedad margin a padding: ??; este toma valores numericos*/
-  padding: 10px;
+
+  margin: 20px;
+
 }
 
