@@ -3,10 +3,46 @@
     height: 300px;
 }
 
-.cuerpo {
- text-align: left;
+.iniciocuerpo {
+ display:flex;
+ flex-direction: column;
 }
 
+.encabezado {
+    display: flex;
+    flex-direction: row;
+    height: 270px;
+
+}
+
+.tablasranking {
+    display: flex;
+    flex-direction: row;    
+    gap: 10px;
+    padding: 0 10px;
+
+}
+
+.reseña{
+    font-style: italic;
+    text-align: center;
+    padding: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.reseña p{
+    font-weight: bold;
+    font-size: 30px;
 
 
+}
+
+.imageninicio {
+    width: 20%;
+
+}
 
