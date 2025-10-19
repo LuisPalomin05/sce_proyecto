@@ -2,7 +2,7 @@
 import "../../../css/paginainicio.css";
 import logo from "../../img/torquelogo.jpg";
 import Ranking from "../utils/Ranking.jsx"
-
+import RecursosVirtuales from "../utils/RecursosVirtuales.jsx";
 
 const PaginaInicio = () => {
 return (
@@ -24,6 +24,7 @@ return (
 </div>    
 </div>
 
+<div className="segundaparte">
 <div className="tablasranking"> 
 <div className="elemento">
  <Ranking Título={"Cotizaciones más recientes"}/> 
@@ -32,9 +33,17 @@ return (
 <div className="elemento">
 <Ranking Título={"Productos más vendidos del 2025-III"}/> 
 </div> 
+
+
+</div>
+<div className="recursos">
+<RecursosVirtuales />
+</div>
 </div>
 
 </div>
+
+
 
 );
 
