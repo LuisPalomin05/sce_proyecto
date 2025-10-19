@@ -30,9 +30,9 @@ const Ventas = () => {
   return (
     <div>
 
-    {/* <Graphicbar Título={"Ventas"} importesoles={100} importedolares={5000}/>    */}
+    <Graphicbar Título={"Ventas"} importesoles={100} importedolares={5000}/>   
 
-
+<p> este comentario es de baja prioridad</p>
 
 
 

@@ -7,7 +7,7 @@ import Graphicbar from "../utils/Graphicbar"
 const Compras = () => {
     return (
         <div>
-            {/* <Graphicbar Título={"Compras"} importesoles={1700} importedolares={2300}/>            */}
+            <Graphicbar Título={"Compras"} importesoles={1700} importedolares={2300}/>           
 
 
         </div>
