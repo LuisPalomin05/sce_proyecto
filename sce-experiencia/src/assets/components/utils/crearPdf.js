@@ -64,11 +64,11 @@ export const crearPdf = (data) => {
   ];
   const rows = datos.producto.map((item, index) => [
     index + 1,
-    item[1],
-    item[2],
-    item[3],
-    parseFloat(item[4]).toFixed(2),
-    (parseFloat(item[3]) * parseFloat(item[4])).toFixed(2),
+    item.codigo || "",
+    item.descripcion || "",
+    item.cantidad || 0,
+    parseFloat(item.precioUnitario || 0).toFixed(2),
+    parseFloat(item.total || 0).toFixed(2),
   ]);
 
   autoTable(doc, {
@@ -90,32 +90,46 @@ export const crearPdf = (data) => {
 
   // --- POSICIÓN FINAL DE LA TABLA ---
   const finalY = doc.lastAutoTable.finalY + 10;
+  const yTotales = finalY;
 
   // --- OBSERVACIONES ---
-  doc.text("Observaciones :", 14, finalY);
-  doc.text(`${datos.observaciones}`, 14, finalY + 6);
-
-  // --- TOTALES ---
-  const yTotales = finalY;
+  doc.text("Observaciones :", 14, finalY - 2);
+  doc.text(`${datos.observaciones}`, 16, finalY + 5);
   doc.setDrawColor(199, 199, 199);
   doc.setLineWidth(0.2);
-  doc.roundedRect(145, yTotales, 45, 25, 1.5, 1.5);
+  doc.roundedRect(14, yTotales, 134, 25, 1.5, 1.5);
+
+  // --- TOTALES ---
+  doc.setDrawColor(199, 199, 199);
+  doc.setLineWidth(0.2);
+  doc.roundedRect(150, yTotales, 45, 25, 1.5, 1.5);
   doc.setFontSize(9);
-  doc.text(`SUBTOTAL`, 147.5, yTotales + 5);
-  doc.text(": ", 170, yTotales + 5);
+  doc.text(`SUBTOTAL`, 152.5, yTotales + 5);
+  doc.text(": ", 171, yTotales + 5);
   doc.setLineWidth(0.2);
 
-  doc.line(145, yTotales + 8, 190, yTotales + 8);
-  doc.text(`IGV (18%)`, 147.5, yTotales + 13);
-  doc.text(": ", 170, yTotales + 13);
+  doc.line(150, yTotales + 8, 195, yTotales + 8);
+  doc.text(`IGV (18%)`, 152.5, yTotales + 13);
+  doc.text(": ", 171, yTotales + 13);
   doc.setLineWidth(0.2);
 
-  doc.line(145, yTotales + 16, 190, yTotales + 16);
-  doc.text(`TOTAL`, 147.5, yTotales + 22);
-  doc.text(": ", 170, yTotales + 22);
+  doc.line(150, yTotales + 16, 195, yTotales + 16);
+  doc.text(`TOTAL`, 152.5, yTotales + 22);
+  doc.text(": ", 171, yTotales + 22);
   doc.setLineWidth(0.2);
 
-  doc.line(166, yTotales, 166, yTotales + 25);
+  const subtotal = datos.producto.reduce(
+    (acc, item) => acc + Number(item.total || 0),
+    0
+  );
+  const igv = +(subtotal * 0.18).toFixed(2);
+  const total = +(subtotal + igv).toFixed(2);
+
+  doc.text(`${subtotal.toFixed(2)}`, 177, yTotales + 5);
+  doc.text(`${igv.toFixed(2)}`, 177, yTotales + 13);
+  doc.text(`${total.toFixed(2)}`, 177, yTotales + 22);
+
+  doc.line(173, yTotales, 173, yTotales + 25);
 
   // --- GUARDAR PDF ---
   doc.save("cotizacion.pdf");
