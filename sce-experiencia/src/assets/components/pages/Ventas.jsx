@@ -1,30 +1,10 @@
 import { useState } from "react";
 import { IonIcon } from "@ionic/react";
 import { searchOutline, caretForwardOutline } from "ionicons/icons";
-// import { Bar } from "react-chartjs-2";
-// import {
-//   Chart as ChartJS,
-//   CategoryScale,
-//   LinearScale,
-//   BarElement,
-//   Title,
-//   Tooltip,
-//   Legend,
-// } from "chart.js";
-// import BarChart from "../utils/BarChart";
+
 import "../../../css/ventas.css";
 
 import Graphicbar from "../utils/Graphicbar"
-
-
-// ChartJS.register(
-//   CategoryScale,
-//   LinearScale,
-//   BarElement,
-//   Title,
-//   Tooltip,
-//   Legend
-// );
 
 const Ventas = () => {
   return (

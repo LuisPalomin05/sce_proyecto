@@ -12,6 +12,7 @@
   "dependencies": {
     "@ionic/core": "^8.7.4",
     "@ionic/react": "^8.7.4",
+    "axios": "^1.12.2",
     "chart.js": "^4.5.0",
     "ionicons": "^8.0.13",
     "jspdf": "^3.0.3",

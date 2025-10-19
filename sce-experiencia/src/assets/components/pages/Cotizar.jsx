@@ -1,4 +1,7 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import axios from "axios";
+
 import { IonIcon } from "@ionic/react";
 import { searchOutline, caretForwardOutline } from "ionicons/icons";
 
@@ -12,6 +15,8 @@ import Importes from "../utils/casillaImportes";
 import { crearPdf } from "../utils/crearPdf";
 
 const Cotizador = () => {
+  const localhost = "https://backendapi-6thn.onrender.com/api/cotizacion";
+
   const MetodoPagoArr = [
     "Contado",
     "Crédito",
@@ -45,7 +50,6 @@ const Cotizador = () => {
   const [numeroCotizacion, setNumeroCotizacion] = useState("");
   const [observaciones, setObservaciones] = useState("");
 
-  
   // Datos que pasan al PDF / guardar modelo
   const formData = {
     nombreCliente,
@@ -123,8 +127,19 @@ const Cotizador = () => {
     setProducto((prev) => prev.filter((p) => p.id !== id));
   };
 
+  const onSubmitForm = async (e) => {
+    e.preventDefault();
+
+    try {
+      const newCotizacion = { ...formData };
+      await axios.post(localhost, newCotizacion);
+    } catch (error) {
+      console.error("se encontro el error:", error);
+    }
+  };
+
   return (
-    <div className="Cotizador">
+    <form onSubmit={onSubmitForm} className="Cotizador" method="post">
       <div className="formulario">
         <div className="Completar">
           <section
@@ -311,21 +326,25 @@ const Cotizador = () => {
           </div>
 
           <div className="accionesPanel">
-            <button className="btnPanel">Guardar Cotización</button>
+            <button type="submit" className="btnPanel">
+              Guardar Cotización
+            </button>
             <button
+              type="button"
               className="btnPanel"
               onClick={() => {
-                // el formData ya contiene la lista de productos actual (estado)
                 crearPdf(formData);
               }}
             >
               Generar Factura
             </button>
-            <button className="btnPanel">Cancelar</button>
+            <button type="button" className="btnPanel">
+              Cancelar
+            </button>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
