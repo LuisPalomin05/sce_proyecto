@@ -1,1 +1,62 @@
 /* comentario css ventas */
+.VistaVenta {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.encabezadoVenta {
+  height: 30%;
+}
+.mainVentas {
+  display: flex;
+  gap: 10px;
+  height: 70%;
+}
+
+.BotonesVenta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btnitems {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.btnitems:nth-child(1) {
+  color: white;
+  background: #257ef2;
+}
+.btnitems:nth-child(2) {
+  color: black;
+  border: 1px solid #323232;
+}
+
+.btnitems:hover {
+  box-shadow: 1px 1px 3px 1px #323232;
+}
+.TablasVentas {
+  width: 80%;
+  padding: 5px;
+}
+
+.btnTablaAccion{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.itemTableHead{
+  background: #257ef2;
+  color: white;
+}
+

@@ -1,87 +1,70 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
-import { searchOutline, caretForwardOutline } from "ionicons/icons";
+import {
+  trashBinOutline,
+  pencilOutline,
+  searchOutline,
+  caretForwardOutline,
+} from "ionicons/icons";
 
 import "../../../css/ventas.css";
 
-import Graphicbar from "../utils/Graphicbar"
+import Graphicbar from "../utils/Graphicbar";
 
 const Ventas = () => {
   return (
-    <div>
+    <div className="VistaVenta">
+      <div className="encabezadoVenta">
+        <Graphicbar
+          Título={"Ventas"}
+          importesoles={100}
+          importedolares={5000}
+        />
+      </div>
 
-    <Graphicbar Título={"Ventas"} importesoles={100} importedolares={5000}/> 
-
-    <p>Hola mundo</p>
-
-
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>N° Factura</th>
-              <th>Señor(es)</th>
-              <th>RUC</th>
-              <th>Direccion</th>
-              <th>Emision</th>
-              <th>Tipo de moneda</th>
-              <th>Metodo de Pago</th>
-              <th>Guia de Remision</th>
-              <th>Total</th>
-              <th>Ver detalle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>0001524</td>
-              <td>Juan Perez</td>
-              <td>1122338948</td>
-              <td>Calle Las Rosas 234</td>
-              <td></td>
-              <td>Dolar americano ($)</td>
-              <td>Tarjeta de Credito</td>
-              <td>
-                Nº2020202020<ion-icon name="document-text-outline"></ion-icon>
-              </td>
-              <td>$20.00</td>
-              <td>
-                <ion-icon name="document-text-outline"></ion-icon>
-              </td>
-            </tr>
-            <tr>
-              <td>0001524</td>
-              <td>Juan Perez</td>
-              <td>1122338948</td>
-              <td>Calle Las Rosas 234</td>
-              <td></td>
-              <td>Dolar americano ($)</td>
-              <td>Tarjeta de Credito</td>
-              <td>
-                Nº2020202020<ion-icon name="document-text-outline"></ion-icon>
-              </td>
-              <td>$20.00</td>
-              <td>
-                <ion-icon name="document-text-outline"></ion-icon>
-              </td>
-            </tr>
-            <tr>
-              <td>0001524</td>
-              <td>Juan Perez</td>
-              <td>1122338948</td>
-              <td>Calle Las Rosas 234</td>
-              <td></td>
-              <td>Dolar americano ($)</td>
-              <td>Tarjeta de Credito</td>
-              <td>
-                Nº2020202020<ion-icon name="document-text-outline"></ion-icon>
-              </td>
-              <td>$20.00</td>
-              <td>
-                <ion-icon name="document-text-outline"></ion-icon>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="mainVentas">
+        <div className="TablasVentas">
+          {/* aqui iria una tabla */}
+          <table>
+            <thead>
+              <tr>
+                <th className="itemTableHead">N° item</th>
+                <th className="itemTableHead">Nombre Cliente</th>
+                <th className="itemTableHead">Ruc Cliente</th>
+                <th className="itemTableHead">Fecha Emision</th>
+                <th className="itemTableHead">N° cotizacion</th>
+                <th className="itemTableHead">Importe Total</th>
+                <th className="itemTableHead">Tipo de Moneda</th>
+                <th className="itemTableHead">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>saludos</td>
+                <td>saludos</td>
+                <td>saludos</td>
+                <td>saludos</td>
+                <td>saludos</td>
+                <td>saludos</td>
+                <td>saludos</td>
+                <td className="btnTablaAccion">
+                  <IonIcon icon={pencilOutline} />
+                  <IonIcon icon={trashBinOutline} />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="BotonesVenta">
+          <Link className="btnitems" type="button">
+            Registrar Venta
+          </Link>
+          <Link className="btnitems" type="button">
+            {" "}
+            Refrescar Lista
+          </Link>
+        </div>
       </div>
     </div>
   );
