@@ -11,27 +11,24 @@ function Login({ validacion }) {
   const [contrasena, setContrasena] = useState("");
 
   const manejarLogin = (e) => {
-    e.preventDefault(); 
-    validacion(true);   
-    navigate("/dashboard"); 
+    e.preventDefault();
+    validacion(true);
+    navigate("/dashboard");
   };
-
 
   return (
     <div className="pagina-login">
       <div className="contenedor-superior-izquierdo">
-        
-<div className="logoTitulo">
-<SvgIcon size={60} />
-<p>SCE</p>
-</div>
-        
-        <form onSubmit={manejarLogin} className="formulario-login">
+        <div className="logoTitulo">
+          <SvgIcon size={60} />
+          <p>SCE</p>
+        </div>
 
+        <form onSubmit={manejarLogin} className="formulario-login">
           <div className="grupo-entrada">
             <div className="etiqueta-entrada">R.U.C EMPRESA</div>
-            <input 
-              type="text" 
+            <input
+              type="text"
               value={empresa}
               onChange={(e) => setEmpresa(e.target.value)}
             />
@@ -39,22 +36,23 @@ function Login({ validacion }) {
 
           <div className="grupo-entrada">
             <div className="etiqueta-entrada">USUARIO</div>
-            <input 
-              type="text" 
+            <input
+              type="text"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
             />
           </div>
-          
+
           <div className="grupo-entrada">
             <div className="etiqueta-entrada">CONTRASEÑA</div>
-            <input 
-              type="password" 
+            <input
+              type="password"
               value={contrasena}
+              
               onChange={(e) => setContrasena(e.target.value)}
             />
           </div>
-          
+
           <button type="submit" className="boton-login">
             INICIAR SESIÓN
           </button>

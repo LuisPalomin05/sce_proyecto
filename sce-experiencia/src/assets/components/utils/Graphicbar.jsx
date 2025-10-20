@@ -2,6 +2,7 @@ import "../../../css/Graphicbar.css";
 import { IonIcon } from "@ionic/react";
 import { storefrontOutline } from "ionicons/icons";
 
+
 const Graphicbar = ({ Título, importesoles, importedolares }) => {
   return (
     <div className="graphicbar">
@@ -13,11 +14,11 @@ const Graphicbar = ({ Título, importesoles, importedolares }) => {
         <section className="importes-container">
           <div className="importes">
             <p>Total en Soles</p>
-            <p>{importesoles}</p>
+            <p className="moneda"> S/. {importesoles}</p>
           </div>
           <div className="importes">
             <p>Total en Dolares</p>
-            <p>{importedolares}</p>
+            <p className="moneda"> $. {importedolares}</p>
           </div>
         </section>
         <section className="leyenda">

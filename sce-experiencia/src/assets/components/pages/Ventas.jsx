@@ -1,71 +1,16 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { IonIcon } from "@ionic/react";
-import {
-  trashBinOutline,
-  pencilOutline,
-  searchOutline,
-  caretForwardOutline,
-} from "ionicons/icons";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import "../../../css/ventas.css";
-
-import Graphicbar from "../utils/Graphicbar";
+import Ventas_Listar from "../../vistas/Ventas_Listar";
+import Ventas_Crear from "../../vistas/Ventas_Crear";
 
 const Ventas = () => {
   return (
-    <div className="VistaVenta">
-      <div className="encabezadoVenta">
-        <Graphicbar
-          Título={"Ventas"}
-          importesoles={100}
-          importedolares={5000}
-        />
-      </div>
-
-      <div className="mainVentas">
-        <div className="TablasVentas">
-          {/* aqui iria una tabla */}
-          <table>
-            <thead>
-              <tr>
-                <th className="itemTableHead">N° item</th>
-                <th className="itemTableHead">Nombre Cliente</th>
-                <th className="itemTableHead">Ruc Cliente</th>
-                <th className="itemTableHead">Fecha Emision</th>
-                <th className="itemTableHead">N° cotizacion</th>
-                <th className="itemTableHead">Importe Total</th>
-                <th className="itemTableHead">Tipo de Moneda</th>
-                <th className="itemTableHead">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td className="btnTablaAccion">
-                  <IonIcon icon={pencilOutline} />
-                  <IonIcon icon={trashBinOutline} />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="BotonesVenta">
-          <Link className="btnitems" type="button">
-            Registrar Venta
-          </Link>
-          <Link className="btnitems" type="button">
-            {" "}
-            Refrescar Lista
-          </Link>
-        </div>
-      </div>
+    <div>
+      <Routes >
+        <Route path="/*" element={<Ventas_Listar />} />
+        <Route path="/registrar" element={<Ventas_Crear />} />
+      </Routes>
     </div>
   );
 };

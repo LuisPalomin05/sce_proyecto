@@ -3,7 +3,6 @@ import { useState } from "react";
 import { IonIcon } from "@ionic/react";
 import { notifications, notificationsOutline } from "ionicons/icons";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
@@ -55,14 +54,15 @@ const Inicio = () => {
 
       <section className="Contentido">
         <Routes>
-          <Route path="/" element={<PaginaInicio/>} />
-          <Route path="cotizar" element={<Cotizador/>} />
-          <Route path="compras" element={<Compras/>} />
-          <Route path="ventas" element={<Ventas/>} />
+          <Route path="/" element={<PaginaInicio />} />
+          <Route path="cotizar" element={<Cotizador />} />
+          <Route path="compras/*" element={<Compras />} />
+          <Route path="ventas/*" element={<Ventas />} />
           <Route path="pedidos" element={<Pedidos />} />
-          <Route path="administracion"
+          <Route
+            path="administracion"
             element={<div>Página de Gestión Cliente/Proveedor</div>}
-          /> 
+          />
         </Routes>
       </section>
     </div>
@@ -70,9 +70,3 @@ const Inicio = () => {
 };
 
 export default Inicio;
-
-
-
-
-
-

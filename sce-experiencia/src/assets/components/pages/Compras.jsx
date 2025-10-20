@@ -1,21 +1,17 @@
 import React from "react";
-// import { Bar } from 'react-chartjs-2';
-// import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Compras_Listar from "../../vistas/Compras_Listar";
+import Compras_Crear from "../../vistas/Compras_Crear";
 import "../../../css/compras.css";
-
-import Graphicbar from "../utils/Graphicbar";
-import fondo from "../../img/fondo.jpg";
-
 
 const Compras = () => {
   return (
     <div>
-      <Graphicbar
-        Título={"Compras"}
-        importesoles={1700}
-        importedolares={2300}
-      />
-      <img className="pruebas" src={fondo} alt="hola" />
+      <Routes>
+        <Route path="/" element={<Compras_Listar />} />
+        <Route path="/registrar" element={<Compras_Crear />} />
+      </Routes>
     </div>
   );
 };

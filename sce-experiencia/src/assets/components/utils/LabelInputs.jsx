@@ -2,21 +2,16 @@ const LabelInputs = ({ nombre, children, types = "text", value, onChange }) => {
   const handleChange = (e) => {
     let val = e.target.value;
 
-    // Si el tipo es numérico, validamos con regex
     if (types === "number") {
-      // Solo permite números enteros o decimales (ej: 10, 10.5, .5)
       if (/^\d*\.?\d*$/.test(val)) {
         onChange(e);
       }
-      return; // evitamos llamar a onChange si no pasa la validación
-    }
+      return; }
 
-    // Si no es número, no validamos nada
     onChange(e);
   };
 
   const handleKeyDown = (e) => {
-    // Evita notación científica o signos
     if (["e", "E", "+", "-"].includes(e.key) && types === "number") {
       e.preventDefault();
     }

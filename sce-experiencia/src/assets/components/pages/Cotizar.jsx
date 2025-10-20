@@ -4,7 +4,7 @@ import axios from "axios";
 import { IonIcon } from "@ionic/react";
 import { searchOutline, caretForwardOutline } from "ionicons/icons";
 
-import "../../../css/inicio_cotizador.css";
+import "../../../css/cotizador.css";
 
 import LabelInputs from "../utils/LabelInputs";
 import OptionInputs from "../utils/OptionInputs";

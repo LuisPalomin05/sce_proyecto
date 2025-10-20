@@ -1,6 +1,11 @@
-import "./css/App.css"; 
+import "./css/App.css";
 import React, { useState } from "react";
-import {BrowserRouter as Router,Routes,Route,Navigate} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import "./css/login.css";
 import Login from "./assets/components/Login";
@@ -16,10 +21,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route 
-          path="/" 
-          element={<Login validacion={callAuth} />} 
-        />
+        <Route path="/" element={<Login validacion={callAuth} />} />
 
         <Route
           path="/dashboard/*"
