@@ -1,0 +1,120 @@
+.ListaEspera {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.encabezadoLista {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.encabezadoLista h2 {
+  font-size: 20px;
+  color: #2b2b2b;
+  border-left: 6px solid #4b8df8;
+  padding-left: 10px;
+}
+
+.btnActualizar {
+  background-color: #4b8df8;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btnActualizar:hover {
+  background-color: #3a77d3;
+}
+
+/* Tabla */
+.tablaPedidos {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tablaPedidos th,
+.tablaPedidos td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.tablaPedidos th {
+  background-color: #f3f6ff;
+  color: #333;
+  font-weight: 600;
+}
+
+.tablaPedidos tr:hover td {
+  background-color: #f9f9f9;
+}
+
+.btnVer {
+  background-color: #10b981;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.btnVer:hover {
+  background-color: #059669;
+}
+
+/* Estado */
+.estado {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.estado.pendiente {
+  background-color: #fde68a;
+  color: #92400e;
+}
+
+.estado.en\ proceso {
+  background-color: #bfdbfe;
+  color: #1e3a8a;
+}
+
+.estado.completado {
+  background-color: #bbf7d0;
+  color: #065f46;
+}
+
+.estado.cancelado {
+  background-color: #fecaca;
+  color: #991b1b;
+}
+
+/* Mensajes */
+.mensajeCargando,
+.mensajeVacio {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  font-size: 15px;
+}
