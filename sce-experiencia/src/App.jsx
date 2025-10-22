@@ -1,4 +1,5 @@
 import "./css/App.css";
+import axios from "axios";
 import React, { useState } from "react";
 import {
   BrowserRouter as Router,
@@ -12,6 +13,13 @@ import Login from "./assets/components/Login";
 import Dashboard from "./assets/components/pages/DashboardInicio";
 
 function App() {
+
+  axios.get("https://backendapi-6thn.onrender.com/").then((response) => {
+    console.log("Conexión con backend exitosa:", response.data);
+  }).catch((error) => {
+    console.error("Error al conectar con el backend:", error);
+  });
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const callAuth = (info) => {

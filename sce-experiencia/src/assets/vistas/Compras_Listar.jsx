@@ -1,3 +1,5 @@
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { trashBinOutline, pencilOutline } from "ionicons/icons";
@@ -6,6 +8,23 @@ import "../../css/ventas.css";
 import Graphicbar from "../components/utils/Graphicbar";
 
 const Compras_Listar = () => {
+  const [compras, setCompras] = useState([]);
+
+  useEffect(() => {
+    const fetchCompras = async () => {
+      try {
+        const response = await axios.get("https://backendapi-6thn.onrender.com/api/compras");
+        setCompras(response.data);
+      } catch (error) {
+        console.error("Error fetching compras:", error);
+      }
+    };
+
+    fetchCompras();
+  }, []);
+
+  console.log(compras);
+
   return (
     <div className="VistaVenta">
       <div className="encabezadoVenta">
@@ -26,26 +45,26 @@ const Compras_Listar = () => {
                 <th className="itemTableHead">Nombre Cliente</th>
                 <th className="itemTableHead">Ruc Cliente</th>
                 <th className="itemTableHead">Fecha Emision</th>
-                <th className="itemTableHead">N° cotizacion</th>
                 <th className="itemTableHead">Importe Total</th>
                 <th className="itemTableHead">Tipo de Moneda</th>
                 <th className="itemTableHead">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td>saludos</td>
-                <td className="btnTablaAccion">
-                  <IonIcon icon={pencilOutline} />
-                  <IonIcon icon={trashBinOutline} />
-                </td>
-              </tr>
+              {compras.map((compra, index) => (
+                <tr key={compra.index}>
+                  <td>{index + 1}</td>
+                  <td>{compra.nombreCliente}</td>
+                  <td>{compra.rucCliente}</td>
+                  <td>{compra.fechaEmision.split("T")[0]}</td>
+                  <td>{parseFloat(compra.importeTotal).toFixed(2)}</td>
+                  <td>{compra.tipoMoneda}</td>
+                  <td className="btnTablaAccion">
+                    <IonIcon icon={pencilOutline} />
+                    <IonIcon icon={trashBinOutline} />
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

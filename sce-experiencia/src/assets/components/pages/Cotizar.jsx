@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { IonIcon } from "@ionic/react";
 import { searchOutline, caretForwardOutline } from "ionicons/icons";
@@ -11,9 +10,11 @@ import OptionInputs from "../utils/OptionInputs";
 import Importes from "../utils/casillaImportes";
 
 import { crearPdf } from "../utils/crearPdf";
+import Notify from "../utils/notify";
+import { ToastContainer} from "react-toastify";
 
 const Cotizador = () => {
-  const notify = (texto) => toast(texto);
+  // const notify = (texto) => toast(texto);
 
   const localhost = "https://backendapi-6thn.onrender.com/api/cotizacion";
 
@@ -133,13 +134,11 @@ const Cotizador = () => {
     try {
       const newCotizacion = { ...formData };
       console.log(numeroCotizacion);
-      notify(`se a guardado: ${numeroCotizacion}`);
+      Notify(`se a guardado: ${numeroCotizacion}`);
 
       await axios.post(localhost, newCotizacion);
     } catch (error) {
       console.error("se encontro el error:", error);
-    } finally {
-      console.log("se ejecuto submit");
     }
   };
 

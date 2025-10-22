@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../../css/listaEspera.css";
 
 const ListaEspera = () => {
@@ -44,7 +45,7 @@ const ListaEspera = () => {
         <table className="tabla-espera">
           <thead>
             <tr>
-              <th>N°</th>
+              <th>#</th>
               <th>Cliente</th>
               <th>RUC</th>
               <th>Fecha</th>
