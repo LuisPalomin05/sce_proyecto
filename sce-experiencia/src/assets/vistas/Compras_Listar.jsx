@@ -51,7 +51,7 @@ const Compras_Listar = () => {
         </div>
         <div className="BotonesVenta">
           <Link
-            to={"/compras/registrar"}
+            to={"/dashboard/compras/registrar"}
             className="btnitems"
             type="button"
           >

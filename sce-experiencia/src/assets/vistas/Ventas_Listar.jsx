@@ -57,7 +57,7 @@ const Ventas_Listar =()=>{
           </table>
         </div>
         <div className="BotonesVenta">
-          <Link to={"/ventas/registrar"} className="btnitems" type="button">
+          <Link to={"/dashboard/ventas/registrar"} className="btnitems" type="button">
             Registrar Venta
           </Link>
           <Link className="btnitems" type="button">
