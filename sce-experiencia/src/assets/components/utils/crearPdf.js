@@ -8,14 +8,14 @@ export const crearPdf = (data) => {
   const doc = new jsPDF();
 
   // --- LOGO ---
-  doc.addImage(torque, "PNG", 8, 8, 30, 30);
+  doc.addImage(torque, "PNG", 12, 8, 30, 30);
 
   // --- TÍTULO Y CABECERA ---
   doc.setFontSize(14);
   doc.text("PERNOS Y TUERCAS TORQUE-G46 SAC", 50, 18);
   doc.setFontSize(8);
   doc.text("CALLE HOLANDA 2250 URB. CHACRA RIOS NORTE - LIMA", 56, 23);
-  doc.text("E-mail : ventas@torqueg46.com.pe  // Tel : 999999999", 60, 27);
+  doc.text("E-mail : ventas@torqueg46.com.pe  // Tel : +51 977492484", 60, 27); 
 
   // --- DATOS DEL DOCUMENTO (RUC / COTIZACIÓN) ---
   doc.setLineWidth(0.5);
@@ -23,7 +23,7 @@ export const crearPdf = (data) => {
   doc.setFontSize(10);
   doc.text(`R.U.C : 207030551312`, 160, 18);
   doc.text("COTIZACION", 165, 24);
-  doc.text(`F001-00000`, 168, 30);
+  doc.text(`${datos.numeroCotizacion}`, 168, 30);
 
   // --- DATOS DEL CLIENTE ---
   doc.setFontSize(8);

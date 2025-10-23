@@ -14,7 +14,6 @@ import Notify from "../utils/notify";
 import { ToastContainer } from "react-toastify";
 
 const Cotizador = () => {
-  // const notify = (texto) => toast(texto);
 
   const localhost = `https://backendapi-6thn.onrender.com/api`;
 
