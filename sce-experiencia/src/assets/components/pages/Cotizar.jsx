@@ -11,12 +11,12 @@ import Importes from "../utils/casillaImportes";
 
 import { crearPdf } from "../utils/crearPdf";
 import Notify from "../utils/notify";
-import { ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 const Cotizador = () => {
   // const notify = (texto) => toast(texto);
 
-  const localhost = "https://backendapi-6thn.onrender.com/api/cotizacion";
+  const localhost = `https://backendapi-6thn.onrender.com/api`;
 
   const MetodoPagoArr = [
     "Contado",
@@ -110,8 +110,6 @@ const Cotizador = () => {
 
     setProducto((prev) => [...prev, nuevoProducto]);
 
-    console.log(producto);
-
     // Limpiar inputs de producto al agregar
     setDescripcion("");
     setCodigo("");
@@ -128,17 +126,37 @@ const Cotizador = () => {
     setProducto((prev) => prev.filter((p) => p.id !== id));
   };
 
+  const guardarCotizacionYPedido = async (cotizacion, pedido) => {
+  try {
+    const [cotRes, pedRes] = await Promise.all([
+      axios.post(`${localhost}/cotizacion`, cotizacion),
+      axios.post(`${localhost}/pedidos`, pedido)
+    ]);
+    Notify(`Guardado exitoso: ${cotizacion.numeroCotizacion}`);
+  } catch (error) {
+    console.error("Error en guardado:", error.response?.data || error.message);
+  }
+};
+
+
   const onSubmitForm = async (e) => {
     e.preventDefault();
 
     try {
       const newCotizacion = { ...formData };
-      console.log(numeroCotizacion);
-      Notify(`se a guardado: ${numeroCotizacion}`);
+      const addPedido = {
+        nombreCliente: newCotizacion.nombreCliente,
+        rucCliente: newCotizacion.rucCliente,
+        producto: newCotizacion.producto,
+        numeroCotizacion: newCotizacion.numeroCotizacion,
+        fechaPedido: newCotizacion.fechaEmision,
+      };
 
-      await axios.post(localhost, newCotizacion);
+      guardarCotizacionYPedido(newCotizacion, addPedido);
+
+      Notify(`se a guardado: ${newCotizacion.numeroCotizacion}`);
     } catch (error) {
-      console.error("se encontro el error:", error);
+  console.error("Error al guardar:", error.response?.data || error.message);
     }
   };
 

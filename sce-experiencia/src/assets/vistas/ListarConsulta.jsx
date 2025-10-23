@@ -1,0 +1,75 @@
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { IonIcon } from "@ionic/react";
+import { trashBinOutline, pencilOutline } from "ionicons/icons";
+
+const ListarConsulta = ({ httpTitle }) => {
+  const [elementos, setElementos] = useState([]);
+
+  useEffect(() => {
+    const fetchElementos = async () => {
+      try {
+        const response = await axios.get(
+          `https://backendapi-6thn.onrender.com/api/${httpTitle}`
+        );
+        setElementos(response.data);
+      } catch (error) {
+        console.error(`Error fetching ${setElementos}:`, error);
+      }
+    };
+
+    fetchElementos();
+  }, []);
+
+  return (
+      <div className="mainVentas">
+        <div className="TablasVentas">
+          {/* aqui iria una tabla */}
+          <table>
+            <thead>
+              <tr>
+                <th className="itemTableHead">N° item</th>
+                <th className="itemTableHead">Nombre Cliente</th>
+                <th className="itemTableHead">Ruc Cliente</th>
+                <th className="itemTableHead">Fecha Emision</th>
+                <th className="itemTableHead">Importe Total</th>
+                <th className="itemTableHead">Tipo de Moneda</th>
+                <th className="itemTableHead">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {elementos.map((element, index) => (
+                <tr key={element.index}>
+                  <td>{index + 1}</td>
+                  <td>{element.nombreCliente}</td>
+                  <td>{element.rucCliente}</td>
+                  <td>{element.fechaEmision.split("T")[0]}</td>
+                  <td>{parseFloat(element.importeTotal).toFixed(2)}</td>
+                  <td>{element.tipoMoneda}</td>
+                  <td className="btnTablaAccion">
+                    <IonIcon icon={pencilOutline} />
+                    <IonIcon icon={trashBinOutline} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="BotonesVenta">
+          <Link
+            to={"/dashboard/compras/registrar"}
+            className="btnitems"
+            type="button"
+          >
+            Registrar Compra
+          </Link>
+          <Link className="btnitems" type="button">
+            Refrescar Lista
+          </Link>
+        </div>
+      </div>
+  );
+};
+
+export default ListarConsulta;

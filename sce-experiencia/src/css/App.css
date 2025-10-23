@@ -5,7 +5,7 @@
   display: grid;
   grid:
     "sidebar body" 1fr
-    / 200px 1fr;
+    / 220px 1fr;
 }
 
 @media (max-width: 768px) {

@@ -7,28 +7,21 @@ const ListaEspera = () => {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    // Simulación de datos mientras no haya backend conectado
-    const dataSimulada = [
-      {
-        id: 1,
-        cliente: "Juan Pérez",
-        ruc: "10456789231",
-        fecha: "2025-10-15",
-        total: 780.5,
-        estado: "Pendiente",
-      },
-      {
-        id: 2,
-        cliente: "Tienda Don Julio",
-        ruc: "10785693212",
-        fecha: "2025-10-16",
-        total: 1280.75,
-        estado: "Pendiente",
-      },
-    ];
+    const fetchPedidos = async () => {
+      try {
+        const response = await axios.get(
+          `https://backendapi-6thn.onrender.com/api/pedidos`
+        );
+        setPedidos(response.data);
+      } catch (error) {
+        console.error("Error al obtener los pedidos:", error);
+      }
+    };
+
+    fetchPedidos();
 
     setTimeout(() => {
-      setPedidos(dataSimulada);
+      fetchPedidos();
       setCargando(false);
     }, 700);
   }, []);
@@ -48,20 +41,23 @@ const ListaEspera = () => {
               <th>#</th>
               <th>Cliente</th>
               <th>RUC</th>
-              <th>Fecha</th>
-              <th>Total (S/)</th>
-              <th>Estado</th>
+              <th>Numero de Cotizacion</th>
+              <th>Fecha Pedido</th>
+              <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
             {pedidos.map((p, index) => (
-              <tr key={p.id}>
+              <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{p.cliente}</td>
-                <td>{p.ruc}</td>
-                <td>{p.fecha}</td>
-                <td>{p.total.toFixed(2)}</td>
-                <td>{p.estado}</td>
+                <td>{p.nombreCliente}</td>
+                <td>{p.rucCliente}</td>
+                <td>{p.numeroCotizacion}</td>
+                <td>{p.fechaPedido}</td>
+                <td>
+                  <button className="btn-accion">Ver</button>
+                  <button className="btn-accion">Eliminar</button>
+                </td>
               </tr>
             ))}
           </tbody>
