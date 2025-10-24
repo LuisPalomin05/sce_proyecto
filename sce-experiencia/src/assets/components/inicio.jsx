@@ -10,6 +10,7 @@ import Notificaciones from "./utils/bxNotificaciones";
 import Cotizador from "./pages/Cotizar";
 import Compras from "./pages/Compras";
 import Pedidos from "./pages/Pedidos";
+import Cotizaciones from "./pages/Cotizaciones";
 import Ventas from "./pages/Ventas";
 import PaginaInicio from "./pages/PaginaInicio";
 
@@ -31,7 +32,7 @@ const Inicio = () => {
     <div className="inicio-container">
 
 
-      <div className="inicio-content">
+      {/* <div className="inicio-content"> */}
         <nav className="navbar">
           <p className="navbar-title">CALLE HOLANDA 2250 URB. CHACRA RIOS NORTE - LIMA</p>
           <div className="navbar-controls">
@@ -64,10 +65,10 @@ const Inicio = () => {
             <Route path="compras/*" element={<Compras />} />
             <Route path="ventas/*" element={<Ventas />} />
             <Route path="pedidos" element={<Pedidos />} />
-            <Route path="administracion" element={<div>Página de Gestión Cliente/Proveedor</div>} />
+            <Route path="cotizaciones" element={<Cotizaciones/>} />
           </Routes>
         </section>
-      </div>
+      {/* </div> */}
        <WhatsAppButton />
     </div>
   );

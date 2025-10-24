@@ -12,6 +12,7 @@ import {
 } from "ionicons/icons";
 import ButtonOption from "./utils/button";
 import CardUsuario from "./utils/cardUsuario";
+import logo from "../img/torquelogo.jpg";
 import "../../css/Sidebar.css";
 
 const Sidebar = ({ onLogout }) => {
@@ -31,7 +32,7 @@ const Sidebar = ({ onLogout }) => {
       {/* USUARIO */}
       <div className="sidebar-user">
         <CardUsuario
-          urlImagen={""}
+          urlImagen={logo}
           nombre={"Luis Alfredo"}
           nombreUsuario={"@pmpalomi"}
           isOpen={isOpen}
@@ -45,7 +46,7 @@ const Sidebar = ({ onLogout }) => {
         <ButtonOption titulo="Compras" icono={cartOutline} ruta="/dashboard/compras" visible={isOpen} />
         <ButtonOption titulo="Ventas" icono={bagCheckOutline} ruta="/dashboard/ventas" visible={isOpen} />
         <ButtonOption titulo="Pedidos" icono={cubeOutline} ruta="/dashboard/pedidos" visible={isOpen} />
-        <ButtonOption titulo="Clientes / Proveedores" icono={peopleCircleOutline} ruta="/dashboard/administracion" visible={isOpen} />
+        <ButtonOption titulo="Cotizaciones" icono={peopleCircleOutline} ruta="/dashboard/cotizaciones" visible={isOpen} />
       </nav>
      
       {/* FOOTER */}

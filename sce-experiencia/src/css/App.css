@@ -16,9 +16,16 @@
       "sidebar body" 1fr
       / 210px 1fr;
   }
+
+  .navbar-title{
+    display: none;
+  }
+  .panel{
+    display: none !important;
+  }
 }
 
-.slidebar {
+/* .slidebar {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
@@ -27,7 +34,7 @@
   background: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+} */
 
 .body {
   grid-area: body;

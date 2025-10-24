@@ -16,6 +16,15 @@
   background-color: #111827;
 }
 
+.avatartoggle{
+  width: 60px;
+  height: 60px;
+  border-radius: 25%;
+  border: 2px solid #f59e0b;
+  object-fit: cover;
+  background-color: #111827;
+}
+
 .user-info {
   display: flex;
   flex-direction: column;

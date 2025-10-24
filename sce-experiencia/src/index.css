@@ -35,7 +35,7 @@ html, body {
   padding: 20px;
   position: relative;
   color: #f9fafb;
-  box-shadow: 0 8px 16px 8px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 8px 4px rgba(0,0,0,0.35);
   transition: all 0.5s ease;
 }
 

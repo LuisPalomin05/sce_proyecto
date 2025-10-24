@@ -1,5 +1,5 @@
 import React from "react";
-import perfil from "../../img/FotoPerfilUsuario.jpg";
+// import perfil from "../../img/FotoPerfilUsuario.jpg";
 import "../../../css/cardUsuario.css";
 
 const CardUsuario = ({ urlImagen, nombre, nombreUsuario, isOpen }) => {
@@ -9,7 +9,7 @@ const CardUsuario = ({ urlImagen, nombre, nombreUsuario, isOpen }) => {
         <img
           src={urlImagen || perfil}
           alt="Usuario"
-          className="avatar"
+          className={isOpen ? "avatar" : "avatartoggle"}
         />
       </div>
       {isOpen && (

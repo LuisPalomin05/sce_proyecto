@@ -1,6 +1,6 @@
 /* ==== SIDEBAR GENERAL ==== */
 .sidebar {
-  width: 370px;
+  width: 280px;
   height: 100vh;
   background-color: #e6e6e6;
   color: #f9fafb;
@@ -23,7 +23,7 @@
   justify-content: space-between;
   padding: 15px 20px;
   background-color: #6c567d;
-  border-bottom: 1px solid  #959cad;
+  border-bottom: 2px solid  #e0e9f8c3;
 }
 
 .sidebar-title {
