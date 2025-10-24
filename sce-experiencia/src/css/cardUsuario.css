@@ -8,9 +8,9 @@
 }
 
 .avatar {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 25%;
   border: 2px solid #f59e0b;
   object-fit: cover;
   background-color: #111827;
@@ -25,11 +25,11 @@
 .nombre {
   font-size: 1rem;
   font-weight: 600;
-  color: #f9fafb;
+  color: #2c2d2e;
   margin: 4px 0 2px 0;
 }
 
 .username {
   font-size: 0.85rem;
-  color: #9ca3af;
+  color: #576c8f;
 }
