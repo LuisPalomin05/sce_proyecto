@@ -71,7 +71,7 @@ const Inicio = () => {
 
       <div className="inicio-content">
         <nav className="navbar">
-          <p className="navbar-title">Aquí encontrarás la mejor calidad al alcance de tus manos</p>
+          <p className="navbar-title">Dirección: Calle Omicrón 128, Parque Industrial, Callao</p>
           <div className="navbar-controls">
             <div className={`notification-wrapper ${showNotificacion ? "active" : ""}`}>
               <IonIcon
