@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../css/login.css";
 
@@ -6,9 +7,11 @@ import SvgIcon from "../img/logo.svg.jsx";
 
 function Login({ validacion }) {
   const navigate = useNavigate();
-  const [empresa, setEmpresa] = useState("");
+  const [empresa, setEmpresa] = useState("20601395801");
   const [usuario, setUsuario] = useState("");
   const [contrasena, setContrasena] = useState("");
+
+  
 
   const manejarLogin = (e) => {
     e.preventDefault();
@@ -24,7 +27,7 @@ function Login({ validacion }) {
           <p>SCE</p>
         </div>
 
-        <form onSubmit={manejarLogin} className="formulario-login">
+        <form onSubmit={manejarLogin} method="post" className="formulario-login">
           <div className="grupo-entrada">
             <div className="etiqueta-entrada">R.U.C EMPRESA</div>
             <input

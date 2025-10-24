@@ -1,19 +1,21 @@
 import { IonIcon } from "@ionic/react";
 import { searchOutline } from "ionicons/icons";
+import "../../../css/Inicio.css";
 
-const InputBuscador = ({ placeholder, onChange, value }) => {
+
+const InputBuscador = ({ placeholder, value, onChange }) => {
   return (
-    <div className="InputBuscador">
-      <IonIcon className="icono-buscador" icon={searchOutline} />
+    <div className="input-buscador">
+      <IonIcon icon={searchOutline} className="search-icon" />
       <input
         type="text"
         placeholder={placeholder}
-        onChange={onChange}
         value={value}
+        onChange={onChange}
       />
-      
     </div>
   );
 };
 
 export default InputBuscador;
+
