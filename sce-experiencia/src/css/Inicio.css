@@ -24,7 +24,7 @@
 }
 
 .navbar-title {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #e2e8f0;
   margin: 0;
@@ -50,7 +50,7 @@
 }
 
 .notification-icon:hover {
-  color: #60a5fa;
+  color: #d0d5db;
   transform: scale(1.1);
 }
 
@@ -117,11 +117,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly; 
-  
+  gap: 10px;
 }
 
 .producto-card {
-  width: 20%;           /* cada producto ocupa el 40% del ancho */
+  width: 200px;           /* cada producto ocupa el 40% del ancho */
   height: 330px;        /* altura fija */
   background-color: #e6e6e6;
   color: #29292a;
@@ -133,6 +133,7 @@
   align-items: center;
   justify-content: flex-start;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .producto-card img {

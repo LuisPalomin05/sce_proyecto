@@ -33,7 +33,7 @@ const Inicio = () => {
 
       <div className="inicio-content">
         <nav className="navbar">
-          <p className="navbar-title">Dirección: Calle Omicrón 128, Parque Industrial, Callao</p>
+          <p className="navbar-title">CALLE HOLANDA 2250 URB. CHACRA RIOS NORTE - LIMA</p>
           <div className="navbar-controls">
             <div className={`notification-wrapper ${showNotificacion ? "active" : ""}`}>
               <IonIcon

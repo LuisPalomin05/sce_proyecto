@@ -64,7 +64,7 @@
 /* ==== FOOTER ==== */
 .sidebar-footer {
   padding: 15px 20px;
-  border-top: 1px solid #374151;
+  /* border-top: 1px solid #374151; */
   background-color: #6c567d;
 }
 
