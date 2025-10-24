@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -12,4 +14,67 @@ html, body {
   height: 100%;
   font-family: Arial, sans-serif;
   overflow: hidden;
+}
+
+/* Contenedor del slider */
+.slider-container {
+  width: 100%;
+  max-width: 1200px; /* ancho máximo */
+  margin: 20px auto; /* centrado horizontal */
+}
+
+/* Fondo del slider */
+.slider-background {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* texto al lado izquierdo */
+  height: 200px; /* altura reducida a la mitad */
+  background-size: cover;
+  background-position: center; /* cubre todo el contenedor sin deformar */
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  color: #f9fafb;
+  box-shadow: 0 8px 16px 8px rgba(0,0,0,0.35);
+  transition: all 0.5s ease;
+}
+
+/* Texto del slide */
+.slider-text {
+  max-width: 50%;
+  text-align: justify;
+  color: #f9fafb;
+  text-shadow: 0 2px 6px 8px rgba(0,0,0,0.6);
+}
+
+.slider-text h2,
+.slider-text h3 {
+  margin: 0 0 10px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.slider-text p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Puntos de navegación */
+.slider-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slider-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dots span.active {
+  background-color: #10b981; /* verde acento */
 }

@@ -1,59 +1,26 @@
-import { useState } from "react";
-import { IonIcon } from "@ionic/react";
-import { caretDownOutline, caretBackOutline } from "ionicons/icons";
+import React from "react";
+import perfil from "../../img/FotoPerfilUsuario.jpg";
+import "../../../css/cardUsuario.css";
 
-const CardUsuario = ({ urlImagen, nombre, nombreUsuario }) => {
-
-
-  const handlerIconClick = () => {
-    setIconSpan(
-      iconSpan === caretDownOutline ? caretBackOutline : caretDownOutline
-    );
-  };
-
-  const ramdomColor = () => {
-    const colors = [
-      "#dd401dff",
-      "#44c75cff",
-      "#3854ceff",
-      "#be53c5ff",
-      "#2ecac2ff",
-      "#dd1d37ff",
-      "#8b33ffff",
-      "#339cffff",
-      "#ffbe33ff",
-      "#ff8f33ff",
-    ];
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
-
-  const [iconSpan, setIconSpan] = useState(caretDownOutline);
-  const [colorUsuario] = useState(ramdomColor());
-
+const CardUsuario = ({ urlImagen, nombre, nombreUsuario, isOpen }) => {
   return (
-    <div className="card-usuario">
-      <div className="card-info">
-        {urlImagen ? (
-          <img src={urlImagen} />
-        ) : (
-          <div
-            className={`charUsuario`}
-            style={{ backgroundColor: colorUsuario, color: "white" }}
-          >
-            <p>{nombre.charAt(0)}</p>
-          </div>
-        )}
-
-        <div className="info-usuario">
-          <p>{nombre}</p>
-          <p>{nombreUsuario}</p>
+    <div className={`card-usuario ${!isOpen ? "collapsed" : ""}`}>
+      <div className="avatar-container">
+        <img
+          src={urlImagen || perfil}
+          alt="Usuario"
+          className="avatar"
+        />
+      </div>
+      {isOpen && (
+        <div className="user-info">
+          <h3 className="nombre">{nombre}</h3>
+          <p className="username">{nombreUsuario}</p>
         </div>
-      </div>
-      <div className="icon-span">
-        <IonIcon icon={iconSpan} onClick={handlerIconClick} />
-      </div>
+      )}
     </div>
   );
 };
 
 export default CardUsuario;
+
