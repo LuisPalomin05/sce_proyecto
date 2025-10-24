@@ -1,93 +1,160 @@
-.Navegacion {
+/* ===== Layout general ===== */
+.inicio-container {
+  flex-grow: 1;
+  background-color: #f5f6fa; /* igual al del dashboard */
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+
+/* ===== Barra superior ===== */
+.navbar {
+  display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  align-items: center;
+  height: 59px;
+  background-color:  #6c567d;
+  padding: 15px 20px;
+  border-bottom: 2px solid #e0e9f8c3;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.Navegacion .Titulo {
-  font-size: 15px;
-  font-weight: bold;
+.navbar-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin: 0;
 }
-.Controles {
+
+/* ===== Controles de búsqueda y notificaciones ===== */
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ===== Icono de notificación ===== */
+.notification-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 100%;
-}
-
-.Controles .iconoNotificacion {
-  font-size: 15px;
-  height: 20px;
-  width: 20px;
-  color: #7e7e7e;
-}
-
-.iconoNotificacion:hover {
-  cursor: pointer;
-  color: #575757;
-}
-
-.InputBuscador {
-  background: #d9d9d9ab;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 0 10px;
-  height: 80%;
-  border-radius: 8px;
-  width: 280px;
   cursor: pointer;
 }
 
-.InputBuscador input {
-  border: none;
-  background: transparent;
-  color: #464545;
-  outline: none;
+.notification-icon {
+  font-size: 1.8rem;
+  color: #e2e8f0;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.icono-buscador {
-  font-size: 18px;
-  color: #7e7e7e;
+.notification-icon:hover {
+  color: #60a5fa;
+  transform: scale(1.1);
 }
 
-
-
-.NotificacionWrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.Notificacion {
+/* ===== Caja de notificaciones ===== */
+.notification-box {
   position: absolute;
-  top: 35px;   
-  right: -250px;    
-  width: 280px;
-  z-index: 30;
-  background: #151414;
-  padding: 10px;
+  top: 120%;
+  right: 0;
+  background-color: #ffffff;
   border-radius: 10px;
-  display: none; 
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  width: 260px;
+  padding: 1rem;
+  z-index: 200;
+}
+
+/* ===== Sección de contenido ===== */
+.main-content {
+  flex-grow: 1;
+  padding: 5px;
+  color: #1e293b;
+  background-color: #f5f6fa;
+}
+
+/* ===== Buscador general ===== */
+.input-buscador {
+  display: flex;
+  align-items: center;
+  background-color: #dedada;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  width: 280px;
+}
+
+.input-buscador:hover {
+  background-color: #aea4b6;
+
+}
+
+.input-buscador input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #29292a;
+  font-size: 0.95rem;
+  margin-left: 0.5rem;
+}
+
+.input-buscador input::placeholder {
+  color: #29292a;
+}
+
+/* ===== Icono dentro del buscador ===== */
+.input-buscador .search-icon {
+  font-size: 1.3rem;
+  color: #29292a;
 }
 
 
-
-.NotificacionWrapper:hover .Notificacion {
-  display: block;
+/*CATALOGO CSS*/
+.catalogo-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; 
+  
 }
 
-/* Mostrar fijo si está activo (click) */
-.NotificacionWrapper.activo .Notificacion {
-  display: block;
+.producto-card {
+  width: 20%;           /* cada producto ocupa el 40% del ancho */
+  height: 330px;        /* altura fija */
+  background-color: #e6e6e6;
+  color: #29292a;
+  border-radius: 12px;
+  padding: 5px;
+  box-shadow: 0 3px 8px 5px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* contenido dentro de la pagina principal */
-.Contentido {
-  /* padding: 5px; */
-  height: 100%;
+.producto-card img {
+  width: 98%;
+  height: 60%;       /* la imagen ocupa 60% de la tarjeta */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
+.producto-card h4 {
+  margin: 5px 0;
+  text-align: center;
+}
 
+.producto-card p {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #354f77;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(55, 54, 54, 0.5);
+}
