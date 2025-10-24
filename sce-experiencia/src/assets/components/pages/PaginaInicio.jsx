@@ -35,6 +35,7 @@ const productosData = [
 
   { id: 4, tipo: "producto", imagen: productoD, nombre: "TUERCA MILIMETRICA M6 (10PCS)", descripcion:"Se utiliza para unir tornillos de la misma medida, es común en carpintería metálica y mobiliario" },
   
+  
   // ... más productos
 ];
 
@@ -53,7 +54,7 @@ const PaginaInicio = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="paginaInicioElement">
       
         {/* Slider con fondo */}
         <div className="slider-container">
@@ -93,6 +94,23 @@ const PaginaInicio = () => {
         </div>
       ))}
       </section>
+      <br />
+      <section className="catalogo-productos">
+      {productosData.map((prod) => (
+        <div className="producto-card" key={prod.id}>
+          <img src={prod.imagen} alt={prod.nombre} />
+          <h4>{prod.nombre}</h4>
+          <p>{prod.descripcion}</p>
+        </div>
+      ))}
+      </section>
+
+      {/* Footer */}
+      <footer className="FooterInicio">
+        <p>Desarrollado por TorqueG-64-Grupo4 cibertec</p>
+        <p>© 2024 TorqueG-64. Todos los derechos reservados.</p>
+      </footer>
+
     </div>
   );
 };

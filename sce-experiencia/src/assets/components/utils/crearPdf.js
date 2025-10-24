@@ -15,7 +15,7 @@ export const crearPdf = (data) => {
   doc.text("PERNOS Y TUERCAS TORQUE-G46 SAC", 50, 18);
   doc.setFontSize(8);
   doc.text("CALLE HOLANDA 2250 URB. CHACRA RIOS NORTE - LIMA", 56, 23);
-  doc.text("E-mail : ventas@torqueg46.com.pe  // Tel : 999999999", 60, 27);
+  doc.text("E-mail : ventas@torqueg46.com.pe  // Tel : +51 997 492 484", 60, 27);
 
   // --- DATOS DEL DOCUMENTO (RUC / COTIZACIÓN) ---
   doc.setLineWidth(0.5);
