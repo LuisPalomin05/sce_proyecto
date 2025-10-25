@@ -10,8 +10,8 @@ export const useVentasTorque = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${urlUri}/ventas`);
-        setVentas(response.data); // axios ya devuelve el JSON
-      console.log("🔍 Datos de ventas recibidos:", response.data);
+      setVentas(response.data);
+      
       } catch (error) {
         console.error("Error fetching ventas data:", error);
       }
@@ -24,6 +24,7 @@ export const useVentasTorque = () => {
     .filter((venta) => venta.tipoMoneda === "PEN")
     .reduce((acc, venta) => acc + (venta.importeTotal || 0), 0);
 
+    console.log("Total ventas en Soles:", ventaSolesTorque);
   const ventaDolaresTorque = ventas
     .filter((venta) => venta.tipoMoneda === "USD")
     .reduce((acc, venta) => acc + (venta.importeTotal || 0), 0);

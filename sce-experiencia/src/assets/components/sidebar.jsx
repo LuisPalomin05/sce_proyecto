@@ -48,8 +48,8 @@ const Sidebar = ({ onLogout }) => {
       <div className="sidebar-user">
         <CardUsuario
           urlImagen={logo}
-          nombre={"Luis Alfredo"}
-          nombreUsuario={"@pmpalomi"}
+          nombre={"Administracion"}
+          nombreUsuario={"@torqueG64"}
           isOpen={isOpen}
         />
       </div>
@@ -58,10 +58,10 @@ const Sidebar = ({ onLogout }) => {
       <nav className="sidebar-menu">
         <ButtonOption titulo="Inicio" icono={homeOutline} ruta="/dashboard" visible={isOpen} />
         <ButtonOption titulo="Cotizar" icono={cashOutline} ruta="/dashboard/cotizar" visible={isOpen} />
+         <ButtonOption titulo="Lista Cotizaciones" icono={peopleCircleOutline} ruta="/dashboard/cotizaciones" visible={isOpen} />
         <ButtonOption titulo="Compras" icono={cartOutline} ruta="/dashboard/compras" visible={isOpen} />
         <ButtonOption titulo="Ventas" icono={bagCheckOutline} ruta="/dashboard/ventas" visible={isOpen} />
         <ButtonOption titulo="Pedidos" icono={cubeOutline} ruta="/dashboard/pedidos" visible={isOpen} />
-        <ButtonOption titulo="Cotizaciones" icono={peopleCircleOutline} ruta="/dashboard/cotizaciones" visible={isOpen} />
       </nav>
 
       {/* FOOTER */}
