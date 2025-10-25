@@ -33,8 +33,8 @@ const Sidebar = ({ onLogout }) => {
       <div className="sidebar-user">
         <CardUsuario
           urlImagen={logo}
-          nombre={"Luis Alfredo"}
-          nombreUsuario={"@pmpalomi"}
+          nombre={"Administracion"}
+          nombreUsuario={"@Admin"}
           isOpen={isOpen}
         />
       </div>
