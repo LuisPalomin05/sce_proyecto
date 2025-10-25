@@ -9,8 +9,6 @@ const Ventas_Listar = () => {
       <div className="encabezadoVenta">
         <Graphicbar
           Título={"Ventas"}
-          importesoles={100}
-          importedolares={5000}
         />
       </div>
       <ListarConsulta httpTitle="ventas" />

@@ -13,8 +13,6 @@ const Compras_Listar = () => {
       <div className="encabezadoVenta">
         <Graphicbar
           Título={"Compras"}
-          importesoles={1700}
-          importedolares={2300}
         />
       </div>
 
