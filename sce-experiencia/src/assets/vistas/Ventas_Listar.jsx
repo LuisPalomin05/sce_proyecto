@@ -1,5 +1,4 @@
 import "../../css/ventas.css";
-
 import Graphicbar from "../components/utils/Graphicbar";
 import ListarConsulta from "./ListarConsulta";
 

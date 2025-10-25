@@ -6,21 +6,27 @@ import { trashBinOutline, pencilOutline } from "ionicons/icons";
 
 const ListarConsulta = ({ httpTitle }) => {
   const [elementos, setElementos] = useState([]);
+useEffect(() => {
+  fetchElementos();
+}, []);
 
-  useEffect(() => {
-    const fetchElementos = async () => {
-      try {
-        const response = await axios.get(
-          `https://backendapi-6thn.onrender.com/api/${httpTitle}`
-        );
-        setElementos(response.data);
-      } catch (error) {
-        console.error(`Error fetching ${setElementos}:`, error);
-      }
-    };
+const fetchElementos = async () => {
+  try {
+    const response = await axios.get(`https://backendapi-6thn.onrender.com/api/${httpTitle}`);
+    setElementos(response.data);
+  } catch (error) {
+    console.error(`Error fetching ${httpTitle}:`, error);
+  }
+};
 
-    fetchElementos();
-  }, []);
+const handleDelete = async (id) => { 
+  try {
+    await axios.delete(`https://backendapi-6thn.onrender.com/api/${httpTitle}/${id}`);
+    fetchElementos(); // 👈 recarga los datos
+  } catch (error) {
+    console.error(`no se pudo eliminar ${httpTitle} con id ${id}:`, error);
+  }
+};
 
   return (
       <div className="mainVentas">
@@ -48,8 +54,8 @@ const ListarConsulta = ({ httpTitle }) => {
                   <td>{parseFloat(element.importeTotal).toFixed(2)}</td>
                   <td>{element.tipoMoneda}</td>
                   <td className="btnTablaAccion">
-                    <p className="pencilOutline">☑️</p>
-                    <p className="trashBinOutline">❌</p>
+                    <p className="pencilOutline" >☑️</p>
+                    <p className="trashBinOutline" onClick={() => handleDelete(element._id)}>❌</p>
               
                   </td>
                 </tr>
@@ -65,7 +71,7 @@ const ListarConsulta = ({ httpTitle }) => {
           >
             Registrar {httpTitle}
           </Link>
-          <Link className="btnitems" type="button">
+          <Link className="btnitems" type="button"   onClick={fetchElementos}>
             Refrescar Lista
           </Link>
         </div>

@@ -6,10 +6,10 @@ import "../../../css/pedido.css";
 const Pedidos = () => {
   return (
     <div>
-      <p className="tituloPedido">
+      <div className="tituloPedido">
         <h1>Página de Pedidos</h1>
         <p>Aministre los pedidos en curso</p>
-      </p>
+      </div>
 
       <Submenu />
     </div>
