@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { IonIcon } from "@ionic/react";
 import { notifications, notificationsOutline } from "ionicons/icons";
 import { Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Componentes
 import InputBuscador from "./utils/InputBuscador";
@@ -25,8 +26,22 @@ import WhatsAppButton from "../components/WhatsAppButton"; // ajusta la ruta
 
 const Inicio = () => {
 
-    const [showNotificacion, setShowNotificacion] = useState(false);
+  const [showNotificacion, setShowNotificacion] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSearch = (valor) => {
+    const term = valor.toLowerCase().trim();
+
+    if (term.includes("cotizar")) navigate("/dashboard/cotizar");
+    else if (term.includes("compras")) navigate("/dashboard/compras");
+    else if (term.includes("ventas")) navigate("/dashboard/ventas");
+    else if (term.includes("pedidos")) navigate("/dashboard/pedidos");
+    else if (term.includes("clientes")) navigate("/dashboard/administracion");
+    else if (term.includes("inicio")) navigate("/dashboard");
+    else alert("No se encontró ninguna sección con ese nombre 😅");
+  };
 
   return (
     <div className="inicio-container">
@@ -51,8 +66,7 @@ const Inicio = () => {
 
             <InputBuscador
               placeholder="Buscar..."
-              onChange={(e) => setSearchValue(e.target.value)}
-              value={searchValue}
+              onSearch={handleSearch}
             />
           </div>
         </nav>

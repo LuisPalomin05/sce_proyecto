@@ -114,17 +114,20 @@
 
 /*CATALOGO CSS*/
 .catalogo-productos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly; 
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  grid-auto-rows: 330px;                 /* misma altura que tus cards */
+  justify-items: center;                 /* centra horizontalmente cada card */
+  align-items: start;                    /* alinea las tarjetas arriba */
+  gap: 20px;                             /* separación entre productos */
+  padding: 20px;
 }
 
 .producto-card {
-  width: 200px;           /* cada producto ocupa el 40% del ancho */
-  height: 330px;        /* altura fija */
+  width: 240px;
+  height: 330px;
   background-color: #e6e6e6;
-  color: #29292a;
+  color: #525281;
   border-radius: 12px;
   padding: 5px;
   box-shadow: 0 3px 8px 5px rgba(0,0,0,0.35);
@@ -136,14 +139,45 @@
   cursor: pointer;
 }
 
-.producto-card img {
+/* === Contenedor de imágenes === */
+.img-container {
+  position: relative;
   width: 98%;
-  height: 60%;       /* la imagen ocupa 60% de la tarjeta */
-  object-fit: cover;
+  height: 60%;
   border-radius: 10px;
-  margin-bottom: 10px;
+  overflow: hidden;
 }
 
+/* Imagen principal */
+.img-container .img-principal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+/* Imagen secundaria (oculta al inicio) */
+.img-container .img-secundaria {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Efecto hover: cambia la imagen */
+.img-container:hover .img-principal {
+  opacity: 0;
+}
+
+.img-container:hover .img-secundaria {
+  opacity: 1;
+}
+
+/* Texto del producto */
 .producto-card h4 {
   margin: 5px 0;
   text-align: center;
@@ -151,9 +185,11 @@
 
 .producto-card p {
   font-size: 0.8rem;
-  text-align: center;
-  color: #354f77;
+  text-align: left;
+  padding: 5px 3px;
+  color: #2c2c2c;
 }
+
 
 .producto-card:hover {
   transform: translateY(-5px);

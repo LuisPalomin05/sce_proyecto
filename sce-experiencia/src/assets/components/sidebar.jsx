@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IonIcon } from "@ionic/react";
+import { useNavigate } from "react-router-dom";
 import {
   homeOutline,
   cartOutline,
@@ -18,6 +19,20 @@ import "../../css/Sidebar.css";
 const Sidebar = ({ onLogout }) => {
   const [isOpen, setIsOpen] = useState(true);
   const toggleSidebar = () => setIsOpen(!isOpen);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // limpiar datos locales si los usas
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    // notificar al App.jsx que se cerró sesión
+    if (onLogout) onLogout();
+
+    // redirigir al login
+    navigate("/");
+  };
 
   return (
     <aside className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
@@ -48,13 +63,14 @@ const Sidebar = ({ onLogout }) => {
         <ButtonOption titulo="Pedidos" icono={cubeOutline} ruta="/dashboard/pedidos" visible={isOpen} />
         <ButtonOption titulo="Cotizaciones" icono={peopleCircleOutline} ruta="/dashboard/cotizaciones" visible={isOpen} />
       </nav>
-     
+
       {/* FOOTER */}
       <div className="sidebar-footer">
-        <button className="logout-btn" onClick={onLogout}>
+        <button className="logout-btn" onClick={handleLogout}>
           <IonIcon icon={logOutOutline} />
           {isOpen && <span>Cerrar sesión</span>}
         </button>
+
       </div>
     </aside>
   );

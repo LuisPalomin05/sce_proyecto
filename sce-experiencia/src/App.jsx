@@ -35,6 +35,8 @@ function App() {
           path="/dashboard/*"
           element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}
         />
+        {/* Redirección en caso de rutas no existentes */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
