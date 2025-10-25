@@ -48,8 +48,9 @@ const ListarConsulta = ({ httpTitle }) => {
                   <td>{parseFloat(element.importeTotal).toFixed(2)}</td>
                   <td>{element.tipoMoneda}</td>
                   <td className="btnTablaAccion">
-                    <IonIcon icon={pencilOutline} />
-                    <IonIcon icon={trashBinOutline} />
+                    <p className="pencilOutline">☑️</p>
+                    <p className="trashBinOutline">❌</p>
+              
                   </td>
                 </tr>
               ))}
