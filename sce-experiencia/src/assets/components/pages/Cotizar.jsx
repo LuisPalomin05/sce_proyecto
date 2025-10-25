@@ -171,12 +171,12 @@ const Cotizador = () => {
               value={nombreCliente}
               onChange={(e) => setNombreCliente(e.target.value)}
             />
+            
             <LabelInputs
-              nombre="RUC"
+              nombre="Ruc"
               value={rucCliente}
               onChange={(e) => setRucCliente(e.target.value)}
             >
-              <IonIcon className="Buscar" icon={searchOutline} />
             </LabelInputs>
           </section>
 
@@ -193,7 +193,6 @@ const Cotizador = () => {
               value={codigo}
               onChange={(e) => setCodigo(e.target.value)}
             >
-              <IonIcon className="Buscar" icon={searchOutline} />
             </LabelInputs>
           </section>
 
@@ -211,8 +210,7 @@ const Cotizador = () => {
               types="number"
               value={precioUnitario}
               onChange={(e) => setPrecioUnitario(e.target.value)}
-            >
-              <p>$.</p>
+            > 
             </LabelInputs>
             <div>
               <button
@@ -260,11 +258,11 @@ const Cotizador = () => {
                       {simbolo} {formatMoney(p.total)}
                     </td>
                     <td>
-                      <button
+                      <button className="eliminar"
                         type="button"
                         onClick={() => handleEliminarProducto(p.id)}
                       >
-                        Eliminar
+                        ❌
                       </button>
                     </td>
                   </tr>
