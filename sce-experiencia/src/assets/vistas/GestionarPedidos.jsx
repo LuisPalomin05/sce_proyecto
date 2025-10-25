@@ -23,7 +23,6 @@ const GestionarPedidos = () => {
               <td>Juan Perez</td>
               <td>1122338948</td>
               <td>Calle Las Rosas 234</td>
-              <td></td>
               <td>Dolar americano ($)</td>
               <td>Tarjeta de Credito</td>
               <td>
@@ -39,7 +38,6 @@ const GestionarPedidos = () => {
               <td>Juan Perez</td>
               <td>1122338948</td>
               <td>Calle Las Rosas 234</td>
-              <td></td>
               <td>Dolar americano ($)</td>
               <td>Tarjeta de Credito</td>
               <td>
@@ -55,7 +53,6 @@ const GestionarPedidos = () => {
               <td>Juan Perez</td>
               <td>1122338948</td>
               <td>Calle Las Rosas 234</td>
-              <td></td>
               <td>Dolar americano ($)</td>
               <td>Tarjeta de Credito</td>
               <td>

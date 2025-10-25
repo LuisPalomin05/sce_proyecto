@@ -58,11 +58,11 @@ const ListarConsulta = ({ httpTitle }) => {
         </div>
         <div className="BotonesVenta">
           <Link
-            to={"/dashboard/compras/registrar"}
+            to={`/dashboard/${httpTitle}/registrar`}
             className="btnitems"
             type="button"
           >
-            Registrar Compra
+            Registrar {httpTitle}
           </Link>
           <Link className="btnitems" type="button">
             Refrescar Lista
