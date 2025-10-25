@@ -274,11 +274,11 @@ const Cotizador = () => {
       </div>
 
       <div className="panel">
-        <div className="lateralPanel">
+        {/* <div className="lateralPanel">
           <div className="desplegarPanel">
             <IonIcon icon={caretForwardOutline} />
           </div>
-        </div>
+        </div> */}
 
         <div className="contenidoPanel">
           <div className="MonedaPago">
@@ -338,7 +338,7 @@ const Cotizador = () => {
             <label htmlFor="observaciones">Observaciones:</label>
             <textarea
               name="observaciones"
-              rows="6"
+              rows="4"
               value={observaciones}
               onChange={(e) => setObservaciones(e.target.value)}
             ></textarea>
