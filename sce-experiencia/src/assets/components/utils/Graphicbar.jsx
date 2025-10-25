@@ -33,8 +33,6 @@ const Graphicbar = ({ Título }) => {
   const esCompra = Título === "Compras";
 
   
-  console.log("Es compra:", esCompra);
-  // Según el tipo, elige qué mostrar
   const totalSoles = esCompra ? compraSolesTorque : ventaSolesTorque;
   const totalDolares = esCompra ? compraDolaresTorque : ventaDolaresTorque;
 
@@ -58,7 +56,7 @@ const Graphicbar = ({ Título }) => {
         <section className="leyenda">
           <div className="graphic">
             
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer width="100%" height={160}>
                 <LineChart data={data}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="mes" />

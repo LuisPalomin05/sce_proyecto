@@ -24,7 +24,6 @@ export const useVentasTorque = () => {
     .filter((venta) => venta.tipoMoneda === "PEN")
     .reduce((acc, venta) => acc + (venta.importeTotal || 0), 0);
 
-    console.log("Total ventas en Soles:", ventaSolesTorque);
   const ventaDolaresTorque = ventas
     .filter((venta) => venta.tipoMoneda === "USD")
     .reduce((acc, venta) => acc + (venta.importeTotal || 0), 0);

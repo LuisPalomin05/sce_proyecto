@@ -40,7 +40,7 @@ const ListarConsulta = ({ httpTitle }) => {
             </thead>
             <tbody>
               {elementos.map((element, index) => (
-                <tr key={element.index}>
+                <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{element.nombreCliente}</td>
                   <td>{element.rucCliente}</td>

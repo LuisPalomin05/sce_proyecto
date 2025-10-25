@@ -35,7 +35,7 @@
 
 .btnitems:nth-child(1) {
   color: white;
-  background: #257ef2;
+  background: #6c567d;
 }
 .btnitems:nth-child(2) {
   color: black;
@@ -58,7 +58,7 @@
 }
 
 .itemTableHead{
-  background: #257ef2;
+  background: #6c567d;
   color: white;
 }
 

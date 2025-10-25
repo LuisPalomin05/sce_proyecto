@@ -33,14 +33,10 @@ const Submenu = () => {
 
   
   return (
-    //cuando aplicas margin a los objetos, los distancias uno de otro. por lo que no siempre es la mejor opcion si quieres
-    //que los elementos dentro de ese objeto se separen del padre. es mejor usar la propiedad padding
-    // que le da algo de separacion dentro de los elementos de la clase cuerpo. puedes eliminar los comentarios luego
-    <div className="cuerpo">
+<div className="cuerpo">
       <div>
         <div className="slidebar">
           <div>
-            {/* recuerda que puedes aplicar estilos a una clase css (className) padreBoton*/}
             <button
                className={`padreBoton ${
               vistaActual === "listaEspera" ? "bSelected" : ""
@@ -55,7 +51,7 @@ const Submenu = () => {
             }`}
               onClick={mostrarGestionarPedidos}
             >
-              Gestionar Pedidos
+              Pedidos Tramitados
             </button>
           </div>
           <div style={{ marginTop: "20px" }}>{renderizarVista()}</div>
