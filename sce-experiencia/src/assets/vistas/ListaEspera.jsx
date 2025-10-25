@@ -26,6 +26,13 @@ const ListaEspera = () => {
     }, 700);
   }, []);
 
+
+const EliminarPedido = async (id) => {
+
+
+  
+}
+
   return (
     <div className="lista-espera">
       <h3>Lista de Espera</h3>
@@ -55,7 +62,7 @@ const ListaEspera = () => {
                 <td>{p.numeroCotizacion}</td>
                 <td>{p.fechaPedido}</td>
                 <td>
-                  <button className="btn-accion">Ver</button>
+                  {/* <button className="btn-accion">Ver</button> */}
                   <button className="btn-accion">Eliminar</button>
                 </td>
               </tr>
