@@ -6,9 +6,9 @@ import { trashBinOutline, pencilOutline } from "ionicons/icons";
 
 const ListarConsulta = ({ httpTitle }) => {
   const [elementos, setElementos] = useState([]);
-useEffect(() => {
-  fetchElementos();
-}, []);
+    useEffect(() => {
+      fetchElementos();
+    }, []);
 
 const fetchElementos = async () => {
   try {
@@ -22,7 +22,7 @@ const fetchElementos = async () => {
 const handleDelete = async (id) => { 
   try {
     await axios.delete(`https://backendapi-6thn.onrender.com/api/${httpTitle}/${id}`);
-    fetchElementos(); // 👈 recarga los datos
+    fetchElementos(); 
   } catch (error) {
     console.error(`no se pudo eliminar ${httpTitle} con id ${id}:`, error);
   }
@@ -31,7 +31,6 @@ const handleDelete = async (id) => {
   return (
       <div className="mainVentas">
         <div className="TablasVentas">
-          {/* aqui iria una tabla */}
           <table>
             <thead>
               <tr>
@@ -71,7 +70,7 @@ const handleDelete = async (id) => {
           >
             Registrar {httpTitle}
           </Link>
-          <Link className="btnitems" type="button"   onClick={fetchElementos}>
+          <Link className="btnitems" type="button"   onClick={() => fetchElementos()}>
             Refrescar Lista
           </Link>
         </div>
