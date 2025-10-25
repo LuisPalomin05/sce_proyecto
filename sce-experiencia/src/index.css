@@ -78,3 +78,15 @@ html, body {
 .slider-dots span.active {
   background-color: #10b981; /* verde acento */
 }
+
+
+.btn-accion{
+  background-color: #6c567d;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s ease;
+}

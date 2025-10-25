@@ -1,0 +1,15 @@
+
+.cotizaciones-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.headercotizaciones p{
+    color: #6c567d;
+}
+
+.acciones{
+    display: flex;
+    gap: 5px;
+}

@@ -41,7 +41,7 @@ const ListaEspera = () => {
               <th>#</th>
               <th>Cliente</th>
               <th>RUC</th>
-              <th>Numero de Cotizacion</th>
+              <th>N° Cotizacion</th>
               <th>Fecha Pedido</th>
               <th>Opciones</th>
             </tr>
@@ -53,7 +53,7 @@ const ListaEspera = () => {
                 <td>{p.nombreCliente}</td>
                 <td>{p.rucCliente}</td>
                 <td>{p.numeroCotizacion}</td>
-                <td>{p.fechaPedido}</td>
+                <td>{p.fechaPedido.split("T")[0]}</td>
                 <td>
                   <button className="btn-accion">Ver</button>
                   <button className="btn-accion">Eliminar</button>

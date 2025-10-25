@@ -49,6 +49,7 @@ const Cotizador = () => {
 
   const [numeroCotizacion, setNumeroCotizacion] = useState("");
   const [observaciones, setObservaciones] = useState("");
+  const [totalPago, setTotalPago] = useState(0);
 
   // Datos que pasan al PDF / guardar modelo
   const formData = {
@@ -59,6 +60,7 @@ const Cotizador = () => {
     tipoMoneda,
     metodoPago,
     producto,
+    totalPago,
     numeroCotizacion,
     observaciones,
   };
@@ -75,6 +77,10 @@ const Cotizador = () => {
   const igv = +(subtotal * 0.18).toFixed(2);
   const total = +(subtotal + igv).toFixed(2);
   const simbolo = tipoMoneda.startsWith("Soles") ? "S/" : "$";
+
+  useEffect(() => {
+  setTotalPago(total);
+}, [producto, tipoMoneda]);
 
   // --- Manejo de productos ---
   const handleAgregarProducto = () => {
@@ -108,7 +114,6 @@ const Cotizador = () => {
     };
 
     setProducto((prev) => [...prev, nuevoProducto]);
-
     // Limpiar inputs de producto al agregar
     setDescripcion("");
     setCodigo("");
@@ -159,6 +164,8 @@ const Cotizador = () => {
     }
   };
 
+
+  
   return (
     <form onSubmit={onSubmitForm} className="Cotizador" method="post">
       <div className="formulario">
